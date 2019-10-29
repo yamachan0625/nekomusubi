@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: nekomusubi_production
-  username: nekomusubi
-  password: <%= ENV['NEKOMUSUBI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
