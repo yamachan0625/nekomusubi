@@ -1,0 +1,83 @@
+<div id='edit_modal_wrapper'>
+  <div class='edit_modal'>
+    
+      <%= form_for current_user do |f| %>
+        <div class='edit_modal__content'>
+          <h2>編集</h2>
+          <%= fa_icon "times" %>
+        </div> 
+        <div class='profile_header'>
+            <%= image_tag current_user.avatar.to_s, id: 'avatar_img_prev'%>
+          <% if current_user.persisted? && current_user.avatar? %>
+            <%= image_tag current_user.avatar.to_s, class: 'avatar_present_img' %>
+            <label class='delete_btn'><%= f.check_box :remove_avatar %> 画像を削除</label>
+          <% else %>
+            <%= image_tag 'default.jpg', class: 'avatar_present_img' %>
+            <%= f.hidden_field :avatar_cache %>
+          <% end %>
+            <label>
+              <%= fa_icon("camera") %>
+              <%= f.file_field :avatar, id: 'profile_img' %>
+            </label>
+        </div>
+
+        <div class="edit_field">
+          <%= f.label :ニックネーム, class:'edit_name' %><br />
+          <%= f.text_field :nickname, placeholder: 'ニックネーム', class: 'nickname_edit' %>
+        </div>
+
+        <div class="edit_field">
+          <%= f.label :住所, class:'edit_name' %><br />
+          <%= f.select :address,['東京','福井','大阪'] %>
+        </div>
+
+        <div class="edit_field">
+          <%= f.label :自己紹介, class:'edit_name' %><br />
+          <%= f.text_area :introduction, placeholder: '自己紹介文を入力してください', :size=> "40x10" %>
+        </div>
+      
+        <div class="edit_actions">
+          <%= f.submit "保存", class: 'edit_btn' %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<script>
+  $( document ).on('turbolinks:load', function() {
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+ 
+      reader.onload = function (e) {
+        $('#avatar_img_prev').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+ 
+  $("#profile_img").change(function(){
+    $('.avatar_present_img').remove();
+    $('#avatar_img_prev').css("display", "block");
+
+    readURL(this);
+  });
+});
+
+  $('.fa-camera').hover(
+    function(){
+      $('.avatar_present_img,#avatar_img_prev').css({
+        'opacity' : '0.4',
+      });
+    },
+    function(){
+      $('.avatar_present_img,#avatar_img_prev').css({
+        'opacity' : '1',
+      });
+    }
+  );
+
+</script>
+
+
+

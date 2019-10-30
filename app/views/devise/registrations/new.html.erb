@@ -1,0 +1,52 @@
+<div class='sign-wrapper'>
+<%= image_tag 'nekko.svg',class: 'nekoimage' %>
+  <div class='sign-wrapper__modal'>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname",class: 'input_field'%>
+        <span class='new-name', data-placeholder='ニックネーム'></span>
+      </div>
+
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'input_field'%>
+        <span class='new-name', data-placeholder='メールアドレス'></span>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password",class: 'input_field' %>
+        <span class='new-name', data-placeholder='パスワード'></span>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",class: 'input_field' %>
+        <span class='new-name', data-placeholder='パスワード再入力'></span>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "新規登録", class: 'new-btn' %>
+      </div>
+    <% end %>
+    <div class='btn-field'>
+      <%- if controller_name != 'sessions' %>
+        <li><%= link_to "登録済みの方はこちら", new_session_path(resource_name), class: '' %><br /></li>
+      <% end %>
+
+      <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+        <li><%= link_to "確認メールの再送信", new_confirmation_path(resource_name) %><br /></li>
+      <% end %>
+    </div>
+  </div>
+</div>   
+
+<script>
+  $('.input_field').on("focus",function(){
+    $(this).addClass('focus');
+  });
+  $('.input_field').on("blur",function(){
+    if($(this).val() == '')
+    $(this).removeClass('focus');
+  });
+</script>

@@ -60,3 +60,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem "font-awesome-rails"
+gem 'pry-rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
