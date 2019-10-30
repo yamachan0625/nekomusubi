@@ -4,7 +4,7 @@
     <%= link_to "編集", edit_user_registration_path %> 
     <div class='edit-btnn'> プロフィール編集 </div>
     <%= render 'devise/registrations/profile_edit' %>
-  <% else %> %>
+  <% else %> 
     <%= link_to "サインイン", new_user_registration_path %> 
     <%= link_to "ログイン", new_user_session_path %>
   <% end %> 
