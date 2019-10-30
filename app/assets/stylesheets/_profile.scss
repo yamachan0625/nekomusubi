@@ -1,0 +1,181 @@
+#edit_modal_wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color:rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.edit_modal {
+  position: absolute;
+  width: 500px;
+  height: 640px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin:auto ;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+  background : linear-gradient(to right,
+    rgb(140, 91, 64),
+    white);
+  box-shadow: 0 0 8px gray;
+  &__content{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    background : linear-gradient(to right,
+    rgb(140, 91, 64),
+    white);
+    border-radius: 5px 5px 0 0;
+  }
+}
+.edit_modal__content h2{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.fa-times{
+  position: relative;
+  bottom: 45px;
+  right: 220px;
+  font-size: 30px;
+  &:hover{
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+.profile_header{
+  widows: 100%;
+  height: 185px;
+  background-image: image-url("neko.jpg");
+  padding-top: 20px;
+  background-size: cover;
+}
+
+
+#profile_img{
+  display:none;
+}
+
+.avatar_present_img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white ;
+  transition-duration: 1s;
+  display: block;
+  margin: auto;
+  
+}
+
+
+
+.fa-camera{
+  color:white;
+  border-radius: 50%;
+  font-size: 30px;
+  opacity: 0.8;
+  transition-duration: 0.3s;
+  position: relative;
+  bottom: 100px;
+  &:hover{
+    transform:rotate(360deg);
+    font-size: 50px;
+    opacity: 1;
+    cursor: pointer;
+    color: black;
+  }
+}
+
+.delete_btn{
+display: block;
+padding-bottom: 10px;
+color: white;
+}
+
+#user_remove_avatar:hover{
+  cursor: pointer;
+}
+
+#avatar_img_prev{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white ;
+  display: none;
+  transition-duration: 1s;
+  margin: auto;
+}
+
+
+.nickname_edit{
+  font: 15px/24px sans-serif;
+  width: 85%;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px 8px;
+  box-shadow: 1px 1px 2px 0 #707070 inset;
+  letter-spacing: 1px;
+  border: 1px solid #ffffff;
+}
+
+#user_address{
+  width: 88%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 20px;
+  box-shadow: 1px 1px 2px 0 #707070 inset;
+  letter-spacing: 1px;
+  border: 1px solid #ffffff;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+#user_introduction{
+  width: 85%;
+  height: 200px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px 8px;
+  box-shadow: 1px 1px 2px 0 #707070 inset;
+  letter-spacing: 1px;
+  border: 1px solid #ffffff;
+}
+
+
+.edit_btn{
+  height: 30px;
+  width: 60px;
+  display: block;
+  border-radius: 5px;
+  background-color: rgba(0,153,255,1);
+  color: white;
+  font-weight: bold;
+  position: relative;
+  left: 430px;
+  bottom: 617px;
+  box-shadow: 0 0 8px gray;
+  &:hover{
+    cursor: pointer;
+    background-color: rgba(0,153,255,0.8);
+  }
+}
+
+
+.edit_name{
+  float: left;
+  padding-left: 50px;
+  color: white;
+}

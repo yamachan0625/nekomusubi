@@ -1,3 +1,20 @@
-Hello World
 
-Hello Youtube
+  <% if user_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+    <%= link_to "編集", edit_user_registration_path %> 
+    <div class='edit-btnn'> プロフィール編集 </div>
+    <%= render 'devise/registrations/profile_edit' %>
+  <% else %> %>
+    <%= link_to "サインイン", new_user_registration_path %> 
+    <%= link_to "ログイン", new_user_session_path %>
+  <% end %> 
+
+  <script>
+    $('.edit-btnn').click(function(){
+      $('#edit_modal_wrapper').css('display','block')
+    });
+    $('.fa-times').click(function(){
+      $('#edit_modal_wrapper').css('display','none')
+    });
+
+  </script>

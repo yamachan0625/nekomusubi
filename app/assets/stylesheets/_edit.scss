@@ -1,0 +1,31 @@
+.edit-wrapper{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color:rgba(0, 0, 0, 0.3);
+  &__modal{
+    height: 450px;
+    width: 400px;
+    position: absolute;
+    top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin:  auto;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px 20px;
+  background-color:white;
+  box-shadow: 0 0 8px gray;
+
+  }
+}
+
+.acount-edit-btn{
+  float: right;
+  display: block;
+  padding-top: 20px;
+}
