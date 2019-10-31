@@ -37,6 +37,7 @@
       <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
         <li><%= link_to "確認メールの再送信", new_confirmation_path(resource_name) %><br /></li>
       <% end %>
+      <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
     </div>
   </div>
 </div>   
