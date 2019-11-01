@@ -42,12 +42,12 @@
 
       <li class='facebook-btn'>
         <%= fa_icon("facebook") %>
-        <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path%>
+        <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path,method: :post%>
       </li>
 
       <li class='google-btn'>
         <%= image_tag 'Google.png', class: 'google-logo'%>
-        <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path%>
+        <%= link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path,method: :post%>
       </li>
 
     </div>
