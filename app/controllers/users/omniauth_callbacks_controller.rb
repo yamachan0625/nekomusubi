@@ -9,6 +9,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_from :google
   end
 
+  def twitter
+    callback_from :twitter
+  end
+
   private
 
   def callback_from(provider)
@@ -24,7 +28,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session[:password_confirmation] = @user.password
       session[:provider] = @user.provider
       session[:uid] = @user.uid
-      redirect_to registration_signup_index_path
+      redirect_to new_user_registration_path
     end
   end
 
