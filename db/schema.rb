@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191104165756) do
+ActiveRecord::Schema.define(version: 20191106063210) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",      null: false
-    t.string   "address",    null: false
+    t.string   "title",                 null: false
+    t.string   "address",               null: false
     t.string   "image"
-    t.string   "content",    null: false
+    t.string   "content",               null: false
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
     t.index ["address"], name: "index_posts_on_address", using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
