@@ -1,2 +1,18 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+ <h2>投稿する</h2>
+<%= form_for @post do |f| %>
+  <%= f.text_field :title%>
+  <%= f.select :address,['東京','福井','大阪'] %>
+  <%= f.file_field :image %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+    <% end %>
+
+<h2>投稿一覧</h2>
+<% @posts.each do |post| %>
+  <a href="/users/<%= post.user.id %>"><%= post.user.nickname %></a>
+  <a href="/users/<%= post.user.id %>"><%= post.user.email %></a>
+  <%= post.content %></a></p>
+  <%= post.title %>
+  <%= post.address %>
+  <%# <%= image_tag post.user.avatar.to_s %>
+    <% end %>
