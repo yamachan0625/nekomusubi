@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :avatar, :address, :introduction])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :avatar, :address, :introduction, :remove_avatar])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
