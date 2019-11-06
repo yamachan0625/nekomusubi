@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  validates :title, :address, :content, presence: true
+  geocoded_by :address
+  after_validation :geocode
+
+  # validates :title, :address, :content, presence: true
 end
