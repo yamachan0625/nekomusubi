@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   $('.input_field').on("focus",function(){
     $(this).addClass('focus');
   });
