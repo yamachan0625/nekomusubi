@@ -1,3 +1,6 @@
-<div>
-  <%= link_to "#{post.title}", post %>
-</div>
+<ul>
+  <li><%= post.title %></li>
+  <li><%= post.address%></li>
+  <li><%= image_tag post.image.to_s %></li>
+  <li><%= link_to "マップを開く", "https://maps.google.co.jp/maps?q=loc:#{post.latitude},#{post.longitude}&iwloc=J",target: "_blank" %></li>
+</ul>
