@@ -1,8 +1,104 @@
-.map-field{
-  padding: 20px;
-  height: 500px;
-  width: 80%;
+.modal{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  // display: none;
 }
+
+.post-wrapepr{
+  width: 100%;
+  height: 100%;
+  background-color: #7C544D;
+  position: fixed;
+  overflow: scroll;
+}
+
+#map{
+  height: 700px;
+  width: 100%;
+}
+
+.map-content{
+  height: 100%;
+  width: 40%;
+  float: left;
+  &__map{
+    padding:0 20px;
+    width: inherit;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 10px;
+    & button{
+      margin-bottom: 20px;
+    }
+    }
+  }
+
+.post-content{
+  height: 100%;
+  width: 60%;
+  float: right;
+  position: relative;
+  &__post{
+    width: 400px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin:50px auto;
+    height: fit-content;
+    background-color: white;
+    border: 2px solid	#D19062;
+    box-shadow: 0 0 8px #D19062;
+    border-radius: 5px;
+  }
+}
+
+.image_field{
+  height: 300px;
+  width: 100%;
+  background-color: #f3f3f3; 
+  border: 1px solid	#D19062;
+  & p{
+    text-align: center;
+    padding-top: 100px;
+  }
+}
+
+.fa-image{
+  font-size: 30px;
+  padding-left: 47%;
+}
+
+.post_field{
+  padding: 10px 0;
+  & input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid	#D19062;
+    border-radius: 5px;
+  }
+  & textarea{
+    width: 100%;
+    height: 150px;
+    border: 1px solid	#D19062;
+    border-radius: 5px;
+  }
+  & label {
+    display: block;
+  }
+}
+
+#post_image{
+  display: none;
+}
+
+
+
+
+
 
 .map-image img{
   height: 150px;
