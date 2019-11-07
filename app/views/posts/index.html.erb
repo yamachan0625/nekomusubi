@@ -1,6 +1,7 @@
 <div class='map-field'>
   <div id="map" style='width: 100%; height: 500px;'></div>
   <p><button onclick="getMyPlace()">現在位置を取得</button></p>
+  <div id="result"></div>
 </div>
 
 <%= form_for @post do |f| %>
@@ -51,6 +52,7 @@
     });
 
     function getMyPlace() {
+      var output = document.getElementById("result");
       var output_latitude = document.getElementById("output_latitude");
       var output_longitude = document.getElementById("output_longitude");
       if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
