@@ -35,6 +35,8 @@
     border: 2px solid	#D19062;
     box-shadow: 0 0 8px white;
     border-radius: 5px;
+    max-height: 764px;
+    overflow: scroll;
   }
 }
 
@@ -44,8 +46,6 @@
   font-weight: bold;
   font-size: 15px;
   position: absolute;
-  right: 20px;
-  top: 65%;
   cursor: pointer;
   background-color:#aaaaaa;
   border-style:none;
@@ -95,13 +95,13 @@
   }
   & label {
     display: block;
-  }
-  &__address{
-    margin-bottom: 30px;
-    padding: 0 10px;
-    box-sizing: border-box;
+    & span{
+      color: red;
+      padding-left: 10px;
+    }
   }
 }
+
 
 .post_input{
   padding: 0 10px;
@@ -127,6 +127,23 @@
       border: 2px solid rgba(191,142,100,1);
     }
   }
+}
+
+.title_label{
+  display: none;
+}
+
+.address_label{
+  display: none;
+}
+
+.detail_label{
+  display: none;
+}
+
+.btn_label{
+  display: none;
+  padding-bottom: 10px;
 }
 
 #post_image{
