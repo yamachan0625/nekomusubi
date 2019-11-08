@@ -1,45 +1,65 @@
-<div class='map-field'>
-  <div id="map" style='width: 100%; height: 500px;'></div>
-  <p><button onclick="getMyPlace()">現在位置を取得</button></p>
-  <div id="result"></div>
+<div class='post-wrapepr'>
+
+  <div class='map-content'>
+    <div class='map-content__map'>
+      <div id="map"></div>
+      <div id="result"></div>
+    </div>
+  </div>
+
 </div>
 
-<%= form_for @post do |f| %>
-<div class="field">
-    <%= f.label :タイトル %>
-    <%= f.text_field :title %>
-  </div>　
- 
-  <div class="field">
-    <%= f.label :住所 %>
-    <%= f.text_field :address %>
+<div class='modal'>
+
+  <%= fa_icon("fa-times") %>
+
+  <div class='post-content__post'>
+    <p><button onclick="getMyPlace()", id='get-my-place-btn'>現在位置を取得</button></p>
+
+    <%= form_for @post do |f| %>
+
+      <label>
+        <div class='image_field'>
+          <p>クリックしてファイルをアップロード</p>
+          <div class="post_field">
+            <%= fa_icon("image") %>
+            <%= f.file_field :image%>
+          </div>
+        </div>
+      </label>
+
+      <div class="post_field">
+          <%= f.label :タイトル %>
+          <%= f.text_field :title, placeholder: 'タイトルをつけてください', class: :post_input %>
+        </div>
+      
+        <div class="post_field">
+          <%= f.label :住所 %>
+          <%= f.text_field :address, placeholder: '住所を入力するか、現在位置を取得をクリック', class: :post_input, class: :post_field__address %>
+        </div>
+
+        <div>
+          <%= f.text_field :latitude, id: :output_latitude %>
+        </div>
+
+        <div>
+          <%= f.text_field :longitude, id: :output_longitude %>
+        </div>
+
+        <div class="post_field">
+          <%= f.label :内容 %>
+          <%= f.text_area :content, placeholder: '現在の状況を書いてください', class: :post_input %>
+        </div>
+      
+      
+        <div class="post_actions">
+          <%= f.submit %>
+        </div>
+
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :緯度 %>
-    <%= f.text_field :latitude, id: :output_latitude %>
-  </div>
-
-  <div class="field">
-    <%= f.label :経度 %>
-    <%= f.text_field :longitude, id: :output_longitude %>
-  </div>
-
-  <div class="field">
-    <%= f.label :写真 %>
-    <%= f.file_field :image%>
-  </div>
-
-  <div class="field">
-    <%= f.label :内容 %>
-    <%= f.text_field :content %>
-  </div>
- 
- 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
 
 <script type="text/javascript">
 
@@ -83,6 +103,5 @@
       };
       navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
     }
-
 
 </script>
