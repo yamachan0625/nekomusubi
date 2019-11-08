@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
 
   geocoded_by :address
-  after_validation :geocode, if: Proc.new { |a| a.address_changed? }
+  after_validation :geocode
 
 
   mount_uploader :image, ImageUploader
