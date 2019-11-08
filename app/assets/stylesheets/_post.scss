@@ -16,6 +16,16 @@
   right: 0;
 }
 
+.fa-times-circle{
+  color: rgba(255,255,255,0.8);
+  float: right;
+  margin: 30px;
+  font-size: 40px;
+  cursor: pointer;
+  &:hover{
+    color: rgba(255,255,255,0.5)
+  }
+}
 
 .post-content{
   height: 100%;
@@ -162,6 +172,9 @@
 #map{
   height: 700px;
   width: 100%;
+  background-color: #f3f3f3;
+  text-align: center;
+  line-height: 700px;
 }
 
 .map-content{
@@ -170,7 +183,7 @@
   display: inline-block;
   background-color: #7C544D;
   &__map{
-    padding:0 20px;
+    padding:0 10px;
     width: inherit;
     box-sizing: border-box;
     position: fixed;

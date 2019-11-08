@@ -2,7 +2,7 @@
 
   <div class='map-content'>
     <div class='map-content__map'>
-      <div id="map"></div>
+      <div id="map">読み込めませんでした。リロードしてください。</div>
       <div id="result"></div>
     </div>
   </div>
@@ -11,7 +11,7 @@
 
 <div class='modal'>
 
-  <%= fa_icon("fa-times") %>
+  <%= fa_icon("times-circle") %>
 
   <div class='post-content__post'>
 
@@ -52,15 +52,15 @@
           <%= f.text_area :content, placeholder: '現在の状況を書いてください', class: :post_input %>
           <label><span class='detail_label'>入力してください</span></label>
         </div>
-        
-        <label><span class='btn_label'>左のマップに現在地が表示されればOKです</span></label>
-        <p><button onclick="getMyPlace()", id='get-my-place-btn'>現在位置を取得</button></p>
+
+        <label><span class='btn_label'>左のマップに現在地が表示されればOKです。取得に少し時間がかかります。</span></label>
       
         <div class="post_actions">
           <%= f.submit %>
         </div>
 
     <% end %>
+        <p><button onclick="getMyPlace()", id='get-my-place-btn'>現在位置を取得</button></p>
   </div>
 
 </div>
