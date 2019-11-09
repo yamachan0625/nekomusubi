@@ -4,7 +4,7 @@
       <%= form_for current_user do |f| %>
         <div class='edit_modal__content'>
           <h2>編集</h2>
-          <%= fa_icon "times" %>
+          <%= icon("fas","times") %>
         </div> 
         <div class='profile_header'>
             <%= image_tag current_user.avatar.to_s, id: 'avatar_img_prev'%>
@@ -16,7 +16,7 @@
             <%= f.hidden_field :avatar_cache %>
           <% end %>
             <label>
-              <%= fa_icon("camera") %>
+              <%= icon("fas","camera") %>
               <%= f.file_field :avatar, id: 'profile_img' %>
             </label>
         </div>
