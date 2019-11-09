@@ -1,4 +1,4 @@
-$(function(){
+$( document ).on('turbolinks:load', function() {
   //登録ボタンを押したときタイトル枠を赤く＆警告を表示する
   $('#new_post').submit(function() {
     if($('#post_title').val() == ''){

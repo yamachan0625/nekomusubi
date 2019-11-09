@@ -2,6 +2,7 @@
 
   <div class='map-content'>
     <div class='map-content__map'>
+      <p>猫map</p>
       <div id="map">読み込めませんでした。リロードしてください。</div>
       <div id="result"></div>
     </div>
@@ -18,14 +19,16 @@
     <%= form_for @post do |f| %>
 
       <label>
-        <div class='image_field'>
-          <p>クリックしてファイルをアップロード</p>
+        <div id='image_field'>
+        <%= image_tag @post.image.to_s, id: :img_prev %>
           <div class="post_field">
+            <p class='upload_name'>クリックしてファイルをアップロード</p>
             <%= fa_icon("image") %>
             <%= f.file_field :image%>
           </div>
         </div>
       </label>
+      <%= f.check_box :remove_image %> 画像を削除
 
       <div class="post_field">
           <label>タイトル<span>必須</span></label>
@@ -53,7 +56,7 @@
           <label><span class='detail_label'>入力してください</span></label>
         </div>
 
-        <label><span class='btn_label'>左のマップに現在地が表示されればOKです。取得に少し時間がかかります。</span></label>
+        <label><span class='btn_label'>左のマップに現在地が表示されればOKです。現在地の取得に少し時間がかかる場合があります。</span></label>
       
         <div class="post_actions">
           <%= f.submit %>

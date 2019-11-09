@@ -71,16 +71,23 @@
   }
 }
 
-.image_field{
+#image_field{
   height: 300px;
   width: 100%;
   background-color: #f3f3f3; 
   border: 1px solid	#D19062;
   cursor: pointer;
   & p{
-    text-align: center;
     padding-top: 100px;
   }
+}
+
+
+#img_prev{
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+  display: none;
 }
 
 
@@ -91,6 +98,9 @@
 
 .post_field{
   padding: 10px 0;
+  & p{
+    text-align: center;
+  }
   & input{
     width: 100%;
     height: 40px;
@@ -114,7 +124,7 @@
 
 
 .post_input{
-  padding: 0 10px;
+  padding: 10px 10px;
   box-sizing: border-box;
 }
 
@@ -175,6 +185,7 @@
   background-color: #f3f3f3;
   text-align: center;
   line-height: 700px;
+  border: 1px solid	#D19062;
 }
 
 .map-content{
@@ -188,6 +199,12 @@
     box-sizing: border-box;
     position: fixed;
     bottom: 10px;
+    & p{
+      text-align: center;
+      color: white;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
     & button{
       margin-bottom: 20px;
     }
