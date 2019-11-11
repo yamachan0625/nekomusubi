@@ -1,4 +1,5 @@
 <div class='sign-wrapper'>
+<%= render partial: 'posts/header' %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class='right-content'>
@@ -52,7 +53,7 @@
       </li>
 
       <li class='facebook-btn'>
-        <%= con("fa","facebook") %>
+        <%= icon("fa","facebook") %>
         <%= link_to "Facebookで新規登録", user_facebook_omniauth_authorize_path,method: :post%>
       </li>
 
@@ -66,8 +67,8 @@
   <div class='left-content'>
         <%= image_tag "/assets/akubi.png", class: :akubi_neko %>
         <div class='sign-in-message'>
-          <h1>猫matchへようこそ</h1>
-          <h2>猫matchでは誰にでも猫を救うチャンスがあります。<br>みなさんの力を貸してください。</h2>
+          <h1>NEKOMIKKEへようこそ</h1>
+          <h2>NEKOMIKKEでは誰にでも猫を救うチャンスがあります。<br>みなさんの力を貸してください。</h2>
         </div>
   </div>
 </div>

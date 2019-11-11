@@ -20,7 +20,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env['omniauth.auth']) #モデルでSNSにリクエストするメソッド（from_omniauth）を使用し、レスポンスを@userに代入
     if @user.persisted? #@userがすでに存在したらログイン処理、存在しなかったら残りの登録処理へ移行
       sign_in @user
-      redirect_to root_path
+      redirect_to posts_path
     else
       #今回は複数ページに渡る登録項目があるため、情報をsessionに保存し、他のページにも持ち越せるように
       #この辺りの値は用途に合わせてアレンジしてください。
