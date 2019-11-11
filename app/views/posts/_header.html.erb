@@ -1,0 +1,34 @@
+<div class='header'>
+    <div class='logo_field'>
+      <%= image_tag "/assets/neko_logo.png", class: :header_logo_image%>
+    </div>
+    <div class='sign_btn_field'>
+    <% if user_signed_in? %>
+      <div class='new_post_btn_field'>
+        <%= link_to "猫を救う", posts_path, class: :header_btn %>
+      </div>
+      <div class='my_page_btn_field'>
+        <%= image_tag current_user.avatar.to_s %>
+      </div>
+      <div class='my_window'>
+        <ul>
+          <li class='my_window_name'><%= current_user.nickname%></li>
+          <li class='my_page_btn'>
+            <%= icon('fas', 'home') %>マイページ
+          </li>
+          <li class='logout_btn'>
+            <%= icon('fas', 'sign-out-alt') %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+          </li>
+        </ul>
+      </div>
+    <% else %> 
+      <div class='sign_up_field'>
+        <%= link_to "ログイン", user_session_path, class: :header_btn %>
+      </div>
+      <div class='sign_in_field'>
+        <%= link_to "新規登録", new_user_registration_path, class: :header_btn %> 
+      </div>
+    <% end %> 
+    </div>
+  </div>
