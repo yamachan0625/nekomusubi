@@ -13,7 +13,7 @@
       </div>
       <div class='my_window'>
         <ul>
-          <li><%= current_user.nickname%></li>
+          <li class='my_window_name'><%= current_user.nickname%></li>
           <li class='my_page_btn'>
             <%= icon('fas', 'home') %>マイページ
           </li>
@@ -41,7 +41,12 @@
 
   <div class='map-content'>
     <div class='map-content__map'>
-      <p>猫map</p>
+      <div class='post_btn'>
+        <p>登録する</p>
+      </div>
+      <div class='map_name'>
+        <p>捨て猫map</p>
+      </div>
       <div id="map">読み込めませんでした。リロードしてください。</div>
       <div id="result"></div>
     </div>
@@ -136,7 +141,7 @@
       var output_latitude = document.getElementById("output_latitude");
       var output_longitude = document.getElementById("output_longitude");
       if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
-        output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
+        alert("<p>Geolocationはあなたのブラウザーでサポートされておりません</p>");
         return;
       }
       function success(position) {
@@ -159,7 +164,7 @@
       };
       function error() {
         //エラーの場合
-        output.innerHTML = "座標位置を取得できません";
+        alert("住所を取得できません");
       };
       navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
     }

@@ -17,20 +17,22 @@ $( document ).on('turbolinks:load', function() {
 
   //登録ボタンを押したとき住所枠を赤く＆警告を表示する,
   $('#new_post').submit(function() {
-    if($('#post_address').val() == '' && $('#post_address').css('display') == 'block'){
+    if($('#get-my-place-btn').hasClass('none') || $('.address_field').hasClass('none')){
+      return true;
+    }else{
       $('#post_address').css('border','1px solid red');
       $('.address_label').css('display','block');
       $('#get-my-place-btn').css('display','block');
       return false;
-    }else{
-      return true;
-    }
+    };
   });
+
+
   //文字を入力すると警告が消えて枠色も戻る
   $('#post_address').keyup(function(){
     $('.address_label').css('display','none');
     $('#post_address').css('border','1px solid #D19062');
-  })
+  });
 
 
 
@@ -55,15 +57,15 @@ $( document ).on('turbolinks:load', function() {
 
   //現在地取得ボタンを押すと住所入力欄が消えてが消えてメッセージを表示する
   $('#get-my-place-btn').click(function(){
-    $('.address_field').css('display','none');
+    $('.address_field').addClass('none');
     $('.btn_label').css('display','block');
   });
   //住所んを入力すると現在地取得ボタンが消える
   $('#post_address').keyup(function(){
-    $('#get-my-place-btn').css('display','none');
+    $('#get-my-place-btn').addClass('none');
     //住所が未入力だったらボタンを表示する
     if($('#post_address').val() == ''){
-      $('#get-my-place-btn').css('display','block');
+      $('#get-my-place-btn').removeClass('none');
     }
   });
 
@@ -71,6 +73,10 @@ $( document ).on('turbolinks:load', function() {
 
   $('.fa-times-circle').click(function(){
     $('.modal').css('display', 'none');
+  })
+
+  $('.post_btn').click(function(){
+    $('.modal').css('display', 'block');
   })
 
 

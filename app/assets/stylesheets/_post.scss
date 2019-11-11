@@ -12,6 +12,7 @@
   background-color: #99847B;
   position: fixed;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  z-index: 1;
 }
 
 .sign_btn_field{
@@ -53,13 +54,13 @@
   position: absolute;
   top: 65px;
   right: 5px;
+  display: none;
   & li{
     text-align: center;
     border: 1px solid	#D19062;
     box-shadow: 0px 2px 7px 0px white;
     background-color: #DBD4D0; 
     padding: 10px 10px;
-    position: relative;
     & i{
       padding-right: 5px;
       color: #3A1602;
@@ -71,6 +72,12 @@
     }
   }
 }
+
+.my_window_name{
+  font-size: 12px;
+  color: black;
+}
+
 
 
 .my_page_btn:hover{
@@ -94,7 +101,7 @@
 }
 
 #map{
-  height: 700px;
+  height: 600px;
   width: 100%;
   background-color: #f3f3f3;
   text-align: center;
@@ -107,6 +114,7 @@
   width: 30%;
   display: inline-block;
   background-color: #7C544D;
+  position: relative;
   &__map{
     padding:0 10px;
     width: inherit;
@@ -116,7 +124,6 @@
     & p{
       text-align: center;
       color: white;
-      font-size: 30px;
       letter-spacing: 1px;
     }
     & button{
@@ -124,6 +131,29 @@
     }
     }
   }
+
+.post_btn p{
+  background-color:red;
+  border-radius: 5px;
+  box-shadow: 0px 2px 7px 0px white; 
+  width: 200px;
+  margin: 0 auto 20px;
+  font-size: 30px;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.7;
+  }
+}
+
+.map_name p{
+  
+}
+
+
+
+
+
+
 
 .modal{
   background-color: rgba(0,0,0,0.7);
@@ -241,6 +271,13 @@
   }
 }
 
+#post_address{
+  display: block;
+}
+
+.none{
+  display: none;
+}
 
 .post_input{
   padding: 10px 10px;
