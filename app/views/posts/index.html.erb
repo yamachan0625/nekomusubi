@@ -18,19 +18,9 @@
 
   <div class='list-of-posts-content'>
     <ul class='list-of-posts-content__post'>
-      <li class='post-card'>
-        <div class='post-card__image'>
-          <%= image_tag "/assets/neko_logo.png"%>
-        </div>
-        <div class='post-card__title'>
-          ああああああああ
-        </div>
-        <div class='open-googlemap-btn'>
-          <%= link_to "位置を調べる", "https://maps.google.co.jp/maps?q=loc:35.6916,139.699&iwloc=J",target: "_blank" %>
-        </div>
-          <%= link_to "詳細", destroy_user_session_path,%>
-      </li>
-      
+      <% @posts.each do |post|%>
+        <%= render partial: 'posts/post', locals: { post: post } %>
+      <% end %>
     </ul>
   </div>
 
