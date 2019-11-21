@@ -1,4 +1,4 @@
-<div class='post-wrapepr'>
+<div class='post-wrapper'>
 
   <%= render partial: 'header' %>
 
@@ -6,7 +6,7 @@
   <div class='map-content'>
     <div class='map-content__map'>
       <div class='post_btn'>
-        <p>登録する</p>
+        <p>猫を登録</p>
       </div>
       <div class='map_name'>
         <p>捨て猫map</p>
@@ -17,22 +17,16 @@
   </div>
 
   <div class='list-of-posts-content'>
+    <div class='list-of-posts-content__wrapper'>
     <ul class='list-of-posts-content__post'>
       <% @posts.each do |post|%>
         <%= render partial: 'posts/post', locals: { post: post } %>
       <% end %>
     </ul>
+    <%= paginate @posts %>
   </div>
-
+  </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 
