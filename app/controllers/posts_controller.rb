@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC").page(params[:page]).per(12)
+    @posts2 = Post.all
     @post = Post.new
     gon.post = @post
-    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+    @hash = Gmaps4rails.build_markers(@posts2) do |post, marker|
       marker.lat post.latitude
       marker.lng post.longitude
       marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
