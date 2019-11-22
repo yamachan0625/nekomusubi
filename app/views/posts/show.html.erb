@@ -1,0 +1,70 @@
+<div class='post-wrapper'>
+  <%= render partial: 'header' %> 
+
+  <div class='map-content'>
+    <div class='map-content__map'>
+      
+      <div class='map_name'>
+        <p>猫を発見した場所</p>
+      </div>
+      <div id="map">読み込めませんでした。リロードしてください。</div>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <div class='posts-content'>
+    <div class='posts-content__field'>
+      <div class='post-detail-title'>
+        <%= @post_show.title%>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: { scrollwheel: true }, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%= raw @hash.to_json%>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(12);
+    });
+
+    function getMyPlace() {
+      var output = document.getElementById("result");
+      var output_latitude = document.getElementById("output_latitude");
+      var output_longitude = document.getElementById("output_longitude");
+      if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
+        alert("<p>Geolocationはあなたのブラウザーでサポートされておりません</p>");
+        return;
+      }
+      function success(position) {
+        var latitude  = position.coords.latitude;//緯度
+        var longitude = position.coords.longitude;//経度
+        output_latitude.value = latitude
+        output_longitude.value = longitude
+        // 位置情報
+        var latlng = new google.maps.LatLng( latitude , longitude ) ;
+        // Google Mapsに書き出し
+        var map = new google.maps.Map( document.getElementById( 'map' ) , {
+            zoom: 15 ,// ズーム値
+            center: latlng ,// 中心座標
+        } ) ;
+        // マーカーの新規出力
+        new google.maps.Marker( {
+            map: map ,
+            position: latlng ,
+        } ) ;
+      };
+      function error() {
+        //エラーの場合
+        ale("住所を取得できません");
+      };
+      navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
+    }
+
+</script>
