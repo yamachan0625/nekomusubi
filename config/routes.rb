@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   root 'tops#index'
   resources :users, only: [:edit, :update, :create, :new]
-  resources :posts, only: [:index, :show, :create]
+  resources :posts, only: [:index, :show, :create, :show]
 end
