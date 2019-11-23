@@ -12,15 +12,34 @@
     </div>
   </div>
 
+
+
   <div class='posts-content'>
     <div class='posts-content__field'>
-      <div class='post-detail-title'>
+      <div class='contributor__image'>
+        <%=image_tag @post_show.user.avatar.to_s%>
+      </div>
+      <div class='contributor__name'>
+        <%= @post_show.user.nickname%>
+      </div>
+      <div class='contributor__address'>
+        <%= @post_show.user.address%>
+      </div>
+      <div class='post-detail__title'>
         <%= @post_show.title%>
+      </div>
+      <div class='post-detail__image'>
+        <%=image_tag @post_show.image.to_s%>
+      </div>
+      <div class='post-detail__content'>
+        <%= @post_show.content%>
       </div>
     </div>
   </div>
 
 </div>
+
+
 
 
 <script type="text/javascript">
