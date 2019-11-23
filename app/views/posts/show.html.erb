@@ -16,23 +16,42 @@
 
   <div class='posts-content'>
     <div class='posts-content__field'>
-      <div class='contributor__image'>
-        <%=image_tag @post_show.user.avatar.to_s%>
+      <div class='contributor'>
+        <div class='contributor__image'>
+          <%=image_tag @post_show.user.avatar.to_s%>
+        </div>
+        <div class='contributor__name'>
+          <%= @post_show.user.nickname%>
+        </div>
+        <div class='contributor__address'>
+          <%= @post_show.user.address%>
+        </div>
       </div>
-      <div class='contributor__name'>
-        <%= @post_show.user.nickname%>
+      <div class='post-detail-wrapper'>
+        <div class='post-detail-image'>
+          <%=image_tag @post_show.image.to_s%>
+        </div>
+        <div class='post-detail'>
+          <div class='post-detail__title'>
+            <div class='post-detail__title__left'>
+              <P>タイトル</p>
+            </div>
+            <div class='post-detail__title__right'>
+              <%= @post_show.title%>
+            </div>
+          </div>
+          <div class='post-detail__content'>
+            <div class='post-detail__content__left'>
+              <P>現在の状況</p>
+            </div>
+            <div class='post-detail__content__right'>
+              <%= @post_show.content%>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class='contributor__address'>
-        <%= @post_show.user.address%>
-      </div>
-      <div class='post-detail__title'>
-        <%= @post_show.title%>
-      </div>
-      <div class='post-detail__image'>
-        <%=image_tag @post_show.image.to_s%>
-      </div>
-      <div class='post-detail__content'>
-        <%= @post_show.content%>
+      <div class='post-detail-googlemap-btn'>
+        <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{@post_show.latitude},#{@post_show.longitude}",target: "_blank" %>
       </div>
     </div>
   </div>

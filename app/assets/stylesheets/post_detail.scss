@@ -1,12 +1,100 @@
-.contributor__image img{
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  border: 1px solid	#D19062;
-  cursor: pointer;
-  margin-top: 5px;
-  box-shadow: 0px 2px 7px 0px white; 
-  &:hover{
-    opacity: 0.8;
+.contributor{
+  text-align: center;
+  background-color: white;
+  &__image{
+    & img{
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      border: 1px solid	#D19062;
+      cursor: pointer;
+      margin-top: 5px;
+      box-shadow: 0px 2px 7px 0px white; 
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+  &__name{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__address{
+
   }
 } 
+
+.post-detail-wrapper{
+  text-align: center;
+  padding-top: 30px;
+  height: 330px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.post-detail-image{
+  float: left;
+  & img{
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+    background-color: white;
+    border: 2px solid #7C544D;
+  } 
+}
+
+.post-detail{
+  float: left;
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border: 2px solid #7C544D;
+  &__title{
+    font-size: 16px;
+    &__left{
+      font-weight: bold;
+      padding: 10px;
+      background-color: #7C544D;
+      color: white;
+    }
+    &__right{
+      padding: 10px;
+      height: 60px;
+      overflow: scroll;
+    }
+  
+  }
+  &__content{
+    
+    &__left{
+      padding: 10px;
+      font-weight: bold;
+      background-color: #7C544D;
+      color: white;
+    }
+    &__right{
+      padding: 10px;
+      text-align: left;
+      overflow: scroll;
+      height: 150px;
+    }
+  }
+}
+
+.post-detail-googlemap-btn{
+  text-align: center;
+  border-radius: 5px;
+  margin: 20px auto 0;
+  & a{
+    color:#7C544D;
+    background-color: white;
+    text-decoration: none;
+    border: 2px solid #7C544D;
+    border-radius: 5px;
+    padding: 15px 30px;
+    &:hover{
+      background-color: #7C544D;
+      color: white;
+    }
+  }
+}
