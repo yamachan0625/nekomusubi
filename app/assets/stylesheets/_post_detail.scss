@@ -1,6 +1,9 @@
 .contributor{
   text-align: center;
   background-color: white;
+  width: 600px;
+  margin: 0 auto;
+  border: 2px solid #7C544D;
   &__image{
     & img{
       height: 100px;
@@ -84,17 +87,39 @@
 .post-detail-googlemap-btn{
   text-align: center;
   border-radius: 5px;
-  margin: 20px auto 0;
+  margin: 30px auto 40px;
   & a{
     color:#7C544D;
     background-color: white;
     text-decoration: none;
     border: 2px solid #7C544D;
     border-radius: 5px;
-    padding: 15px 30px;
+    padding: 10px 30px;
     &:hover{
       background-color: #7C544D;
       color: white;
     }
   }
+}
+.post-detail-message-btn{
+  text-align: center;
+  
+  & a{
+    text-decoration: none;
+    border: 2px solid #f76f72;
+    color: #f76f72;
+    padding: 10px 30px 10px 40px;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(247,111,114,.2);
+  }
+}
+
+.fa-envelope{
+  position: absolute;
+  margin: 3px 15px;
+  font-size: 17px;
+  color: #f76f72;
+  
 }

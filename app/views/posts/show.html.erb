@@ -53,6 +53,10 @@
       <div class='post-detail-googlemap-btn'>
         <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{@post_show.latitude},#{@post_show.longitude}",target: "_blank" %>
       </div>
+      <div class='post-detail-message-btn'>
+        <%= icon("far","envelope") %>
+        <%= link_to "メッセージする","#"%>
+      </div>
     </div>
   </div>
 
