@@ -62,19 +62,19 @@
 
 
 
-.list-of-posts-content{
+.posts-content{
   width: 70%;
   box-sizing: border-box;
   background-color: #F8F4F1;
   position: relative;
   float: right;
   padding: 80px 10px 10px;
-  &__wrapper{
+  &__field{
     height: calc(100vh - 80px);
     width: 100%;
     background-color: #F8F4F1;
   }
-  &__post{
+  &__list{
     display: flex;
     flex-wrap: wrap;
   }

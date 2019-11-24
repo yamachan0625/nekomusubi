@@ -6,9 +6,9 @@
           <%= post.title%>
         </div>
         <div class='open-googlemap-btn'>
-          <%= link_to "Googleマップで検索", "https://maps.google.co.jp/maps?q=loc:#{post.latitude},#{post.longitude}",target: "_blank" %>
+          <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{post.latitude},#{post.longitude}",target: "_blank" %>
         </div>
         <div class='post-card__btn'>
-          <%= link_to "詳細"%>
+          <%= link_to "詳細", post_path(post.id)%>
         </div>
       </li>

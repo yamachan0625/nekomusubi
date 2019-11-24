@@ -14,7 +14,15 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post_show = Post.find(params[:id])
+    # binding.pry
+    @hash = Gmaps4rails.build_markers(@post_show) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+      marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
+
+      marker.json({ id: post.id, })
+    end
   end
 
   def create
