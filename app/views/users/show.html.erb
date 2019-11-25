@@ -25,15 +25,15 @@
             </div>
               場所
             <div class='my-page__address'>
-              <% if @user.address == nil %>
-                まだ設定されていません。
+              <% if @user.address == nil%>
+                まだ設定されていません
               <%else%>
                 <%= @user.address %>
               <%end%>
             </div>
               自己紹介
             <div class='my-page__introduction'>
-              <% if @user.introduction == nil %>
+              <% if @user.introduction.empty? == true %>
                 まだ自己紹介は書かれていません。
               <%else%>
                 <%= @user.introduction %>
