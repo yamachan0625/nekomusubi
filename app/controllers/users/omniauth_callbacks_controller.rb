@@ -1,19 +1,20 @@
-# frozen_string_literal: true
-
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     callback_from :facebook
   end
 
+
   def google_oauth2
     callback_from :google
   end
+  
 
   def twitter
     callback_from :twitter
   end
-
+  
   private
+  
 
   def callback_from(provider)
     provider = provider.to_s #プロバイダを定義
@@ -31,5 +32,4 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_path
     end
   end
-
 end
