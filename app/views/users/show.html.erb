@@ -1,0 +1,75 @@
+<div class='user-show-wrapper'>
+<%= render partial: 'posts/header' %>
+<% if @user.id == current_user.id %>
+  <%= render 'devise/registrations/profile_edit' %>
+<%end%>
+
+  <div class='map-content'>
+    <div class='my-page-content'>
+      <div class='my-page__image'>
+        <%= image_tag "/assets/neko.jpg" %>
+          <div class='my-page-avatar'>
+            <%= image_tag @user.avatar.to_s%>
+          </div>
+          <div class='my-page-btn-content'>
+            <% if @user.id == current_user.id %>
+              <div class='profile-edit-btn'> プロフィール編集 </div>
+            <%else%>
+
+            <%end%>
+          </div>
+          <div class='my-page'>
+              ニックネーム
+            <div class='my-page__name'>
+              <%= @user.nickname %>
+            </div>
+              場所
+            <div class='my-page__address'>
+              <% if @user.address.length > 1%>
+                <%= @user.address %>
+              <%else%>
+                まだ設定されていません。
+              <%end%>
+            </div>
+              自己紹介
+            <div class='my-page__introduction'>
+              <% if @user.introduction.length > 1%>
+                <%= @user.introduction %>
+              <%else%>
+                まだ自己紹介は書かれていません。
+              <%end%>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class='posts-content'>
+    <div class='posts-content__field'>
+      <ul class='posts-content__list'>
+        <% @posts.each do |post|%>
+          <%= render partial: 'posts/post', locals: { post: post } %>
+        <% end %>
+        <% if @posts.length < 1 %>
+            <div class='no-post-message'>
+              <h1>まだ投稿がありません</h1>
+            </div>
+        <%end%>
+      </ul>
+      <%= paginate @posts %>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    $('.profile-edit-btn').click(function(){
+      $('#edit_modal_wrapper').css('display','block')
+    });
+    $('.fa-times-circle').click(function(){
+      $('#edit_modal_wrapper').css('display','none')
+    });
+
+  </script>

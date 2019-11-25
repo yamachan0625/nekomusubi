@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get 'profile_edit', to: 'users/registrations#profile_edit', as: 'profile_edit'
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
-  root 'tops#index'
-  resources :users, only: [:edit, :update, :create, :new]
+  resources :users, only: [:index, :edit, :update, :create, :new, :show]
   resources :posts, only: [:index, :show, :create, :show]
+  root 'tops#index'
 end

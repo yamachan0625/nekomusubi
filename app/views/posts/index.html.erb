@@ -1,6 +1,6 @@
 <div class='post-wrapper'>
 
-  <%= render partial: 'header' %>
+  <%= render partial: 'header',locals: { user: @user } %>
 
 
   <div class='map-content'>
@@ -18,13 +18,13 @@
 
   <div class='posts-content'>
     <div class='posts-content__field'>
-    <ul class='posts-content__list'>
-      <% @posts.each do |post|%>
-        <%= render partial: 'posts/post', locals: { post: post } %>
-      <% end %>
-    </ul>
-    <%= paginate @posts %>
-  </div>
+      <ul class='posts-content__list'>
+        <% @posts.each do |post|%>
+          <%= render partial: 'posts/post', locals: { post: post } %>
+        <% end %>
+      </ul>
+      <%= paginate @posts %>
+    </div>
   </div>
 </div>
 

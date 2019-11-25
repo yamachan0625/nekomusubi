@@ -8,7 +8,6 @@ class PostsController < ApplicationController
       marker.lat post.latitude
       marker.lng post.longitude
       marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
-
       marker.json({ id: post.id, })
     end
   end
