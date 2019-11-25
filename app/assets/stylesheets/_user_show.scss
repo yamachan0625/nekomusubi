@@ -1,0 +1,13 @@
+.user-content-wrapper{
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  position: fixed;
+}
+
+.no-post-message{
+  margin: auto;
+  & h1{
+    font-size: 20px;
+  }
+}
