@@ -1,10 +1,14 @@
 <div id='edit_modal_wrapper'>
+  <div class='edit-modal-close-btn'>
+    <%= icon('fa',"times-circle") %>
+  </div>
+
   <div class='edit_modal'>
+
     
       <%= form_for current_user do |f| %>
         <div class='edit_modal__content'>
           <h2>編集</h2>
-          <%= icon("fas","times") %>
         </div> 
         <div class='profile_header'>
             <%= image_tag current_user.avatar.to_s, id: 'avatar_img_prev'%>
