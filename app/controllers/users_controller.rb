@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to root_path, notice: '編集が完了しました'
+      redirect_to user_path(current_user.id), notice: '編集が完了しました'
       #redirect先指定する posts#index
     else
       render :edit

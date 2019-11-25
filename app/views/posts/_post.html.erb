@@ -1,14 +1,19 @@
 <li class='post-card'>
-        <div class='post-card__image'>
-          <%= image_tag post.image.to_s%>
-        </div>
-        <div class='post-card__title'>
-          <%= post.title%>
-        </div>
-        <div class='open-googlemap-btn'>
-          <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{post.latitude},#{post.longitude}",target: "_blank" %>
-        </div>
-        <div class='post-card__btn'>
-          <%= link_to "詳細", post_path(post.id)%>
-        </div>
-      </li>
+  <div class='post-card__avatar'>
+    <%= link_to user_path(post.user.id) do %>
+      <%= image_tag post.user.avatar.to_s %>
+    <%end%>
+  </div>
+  <div class='post-card__image'>
+    <%= image_tag post.image.to_s%>
+  </div>
+  <div class='post-card__title'>
+    <%= post.title%>
+  </div>
+  <div class='open-googlemap-btn'>
+    <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{post.latitude},#{post.longitude}",target: "_blank" %>
+  </div>
+  <div class='post-card__btn'>
+    <%= link_to "詳細", post_path(post.id)%>
+  </div>
+</li>

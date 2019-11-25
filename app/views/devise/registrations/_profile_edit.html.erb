@@ -32,7 +32,7 @@
 
         <div class="edit_field">
           <%= f.label :住所, class:'edit_name' %><br />
-          <%= f.select :address,['東京','福井','大阪'] %>
+          <%= f.select :address, User.addresses.keys %>
         </div>
 
         <div class="edit_field">
