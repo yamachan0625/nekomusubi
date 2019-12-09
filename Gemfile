@@ -66,7 +66,7 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
-gem "omniauth"
+
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
