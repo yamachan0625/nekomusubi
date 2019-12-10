@@ -103,8 +103,7 @@
 }
 .post-detail-message-btn{
   text-align: center;
-  
-  & a{
+  & a, input{
     text-decoration: none;
     border: 2px solid #f76f72;
     color: #f76f72;
@@ -114,6 +113,8 @@
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(247,111,114,.2);
   }
+
+  
 }
 
 .fa-envelope{

@@ -55,10 +55,24 @@
       <div class='post-detail-googlemap-btn'>
         <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{@post_show.latitude},#{@post_show.longitude}",target: "_blank" %>
       </div>
-      <div class='post-detail-message-btn'>
-        <%= icon("far","envelope") %>
-        <%= link_to "メッセージする","#"%>
-      </div>
+      <% unless @user.id == current_user.id %>
+        <% if @isRoom == true %>
+          <div class='post-detail-message-btn'>
+            <%= icon("far","envelope") %>
+            <a href="/rooms/<%= @roomId %>">メッセージする</a>
+          </div>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+            <div class='post-detail-message-btn'>
+              <%= icon("far","envelope") %>
+              <%= f.submit "メッセージする"%>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
