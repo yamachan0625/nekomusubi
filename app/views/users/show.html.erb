@@ -33,7 +33,7 @@
             </div>
               自己紹介
             <div class='my-page__introduction'>
-              <% if @user.introduction.empty? == true %>
+              <% if @user.introduction == "" %>
                 まだ自己紹介は書かれていません。
               <%else%>
                 <%= @user.introduction %>
