@@ -1,3 +1,24 @@
 <% @entries.each do |e| %>
   <h5><strong><a href="/users/<%= e.user.id %>"><%= e.user.nickname%>さん</a></strong></h5>
 <% end %>
+
+<% if @messages.present? %>
+  <% @messages.each do |m| %>
+    <strong><%= m.message %></strong>
+    <small>by <strong><a href="/users/<%= m.user_id %>"><%= m.user.nickname %>さん</a></strong></small>
+    <hr>
+  <% end %>
+<% else %>
+  <h3 class="text-center">メッセージはまだありません</h3>
+<% end %>
+
+<% @dm_member.zip(@room_id) do |member, i| %>
+    <strong><a href="/rooms/<%= i %>"><%= member.nickname %>
+<%end%>
+
+<%= form_for @message do |f| %>
+  <%= f.text_field :message, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+  <%= f.hidden_field :room_id, :value => @room.id %>
+  <br>
+  <%= f.submit "投稿する" %>
+<% end %>
