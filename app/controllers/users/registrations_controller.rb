@@ -4,6 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:profile_update, :profile_edit]
   def profile_edit
     redirect_to user_session_path, notice: 'ログインしてください' unless user_signed_in?
+    end
   end
  
   def profile_update
@@ -37,4 +38,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  # end
+  # end  # end
+end
