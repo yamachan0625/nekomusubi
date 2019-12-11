@@ -20,7 +20,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   # def new
   #   super
-@ -50,10 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
@@ -32,7 +31,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
-@ -61,6 +46,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
