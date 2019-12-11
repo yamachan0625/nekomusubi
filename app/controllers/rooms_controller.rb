@@ -42,8 +42,25 @@ class RoomsController < ApplicationController
     #現在ログインしているユーザーのidとそれにひもづくルームのidをwhereメソッドで探しifで条件分岐
     if Entry.where(user_id: current_user.id,room_id: @room.id).present? 
       @messages = @room.messages
+      @my_message = []
+      @your_message = []
+      @messages.each do |message|
+        if message.user_id == current_user.id
+          @my_message << message
+        else
+          @your_message << message
+        end
+      end
+      # binding.pry
+
       @message = Message.new #メッセージ作成のためにインスタンスの生成
-      @entries = @room.entries #ルームにひもづくentriesテーブルの自分と相手の２名分の情報を取り出し代入
+      @entries = @room.entries #ルームにひもづくentriesテーブルの自分と相手の二人分の情報を取り出し代入
+      @entries.each do |entry| #二人entryテーブルのレコードをeachで回し、
+        unless entry.user_id == current_user.id  #自分じゃない相手のuser_idを取得
+          @entry_opponent_id = entry.user_id
+        end
+      end
+      @entry_opponent = User.find(@entry_opponent_id)
     else
       redirect_back(fallback_location: root_path) #前のページにリダイレクト
     end

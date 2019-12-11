@@ -1,0 +1,154 @@
+.message-content{
+  height: calc(100vh - 120px);
+  width: 100%;
+  background-color: #F8F4F1;
+  overflow: scroll;
+}
+
+.message-list{
+  & h1{
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: red;
+    font-weight: 600;
+  }
+  & a{
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding: 10px 20px;
+    &:hover{
+      background-color: #F8F4F1;
+      box-shadow: 0 0 15px 0 white;
+      border-right: solid 5px red;
+      & p{
+        color: black;
+      }
+    }
+    & img{
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+    }
+    & p{
+      display: inline-block;
+      color: white;
+      vertical-align: top;
+      font-weight: 500;
+      font-size: 20px;
+      padding-left: 10px;
+    }
+  }
+}
+
+.message-opponent{
+  font-size: 25px;
+  border-bottom: 1px solid #7C544D;
+  & a{
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: black;
+  & img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid #D19062;
+  }
+  }
+}
+
+.message-form{
+  height: 50px;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid #7C544D;
+  &__submit{
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: #7C544D;
+    color: white;
+    &:hover{
+      background-color: white;
+      color: #7C544D;
+      border: 2px solid #7C544D;
+    }
+  }
+}
+
+
+
+#new_message{
+  text-align: center;
+}
+
+#message_message{
+  width: 700px;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 20px;
+  border-style: none;
+  padding: 20px;
+  &:focus{
+    border: 2px solid #7C544D;
+    outline: 0;
+    box-shadow: 0 0 15px 0 white;
+  }
+}
+
+
+.message-center{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.message-box{
+  &__message{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    display: flex;
+    & img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    }
+    &__style{
+    margin-left: 20px;
+    max-width: 40%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px 20px 20px 0;
+    }
+  }
+}
+
+.message-box{
+  &__message2{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    &__style2{
+    padding:10px;
+    float: right;
+    margin:20px 30px 20px 60%;
+    background-color: #7C544D;
+    border-radius: 20px 20px 0 20px;
+    color: white;
+    }
+  }
+}
+
+.message-time{
+  text-align: right;
+  font-size: 10px;
+}
