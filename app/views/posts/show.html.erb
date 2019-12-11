@@ -1,8 +1,8 @@
 <div class='post-wrapper'>
   <%= render partial: 'header' %> 
 
-  <div class='map-content'>
-    <div class='map-content__map'>
+  <div class='left-content'>
+    <div class='left-content__map'>
       
       <div class='map_name'>
         <p>猫を発見した場所</p>
@@ -14,8 +14,8 @@
 
 
 
-  <div class='posts-content'>
-    <div class='posts-content__field'>
+  <div class='main-content'>
+    <div class='main-content__field'>
       <div class='contributor'>
         <div class='contributor__image'>
           <%= link_to user_path(@post_show.user.id) do %>
