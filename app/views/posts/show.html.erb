@@ -1,8 +1,8 @@
 <div class='post-wrapper'>
   <%= render partial: 'header' %> 
 
-  <div class='map-content'>
-    <div class='map-content__map'>
+  <div class='left-content'>
+    <div class='left-content__map'>
       
       <div class='map_name'>
         <p>猫を発見した場所</p>
@@ -14,8 +14,8 @@
 
 
 
-  <div class='posts-content'>
-    <div class='posts-content__field'>
+  <div class='main-content'>
+    <div class='main-content__field'>
       <div class='contributor'>
         <div class='contributor__image'>
           <%= link_to user_path(@post_show.user.id) do %>
@@ -55,10 +55,24 @@
       <div class='post-detail-googlemap-btn'>
         <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{@post_show.latitude},#{@post_show.longitude}",target: "_blank" %>
       </div>
-      <div class='post-detail-message-btn'>
-        <%= icon("far","envelope") %>
-        <%= link_to "メッセージする","#"%>
-      </div>
+      <% unless @user.id == current_user.id %>
+        <% if @isRoom == true %>
+          <div class='post-detail-message-btn'>
+            <%= icon("far","envelope") %>
+            <a href="/rooms/<%= @roomId %>">メッセージする</a>
+          </div>
+        <% else %>
+          <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e| %>
+              <%= e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+            <div class='post-detail-message-btn'>
+              <%= icon("far","envelope") %>
+              <%= f.submit "メッセージする"%>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 

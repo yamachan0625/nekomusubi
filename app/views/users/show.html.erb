@@ -4,7 +4,7 @@
   <%= render 'devise/registrations/profile_edit' %>
 <%end%>
 
-  <div class='map-content'>
+  <div class='left-content'>
     <div class='my-page-content'>
       <div class='my-page__image'>
         <%= image_tag "/assets/neko.jpg" %>
@@ -33,7 +33,7 @@
             </div>
               自己紹介
             <div class='my-page__introduction'>
-              <% if @user.introduction.empty? == true %>
+              <% if @user.introduction == "" %>
                 まだ自己紹介は書かれていません。
               <%else%>
                 <%= @user.introduction %>
@@ -46,9 +46,9 @@
 
 
 
-  <div class='posts-content'>
-    <div class='posts-content__field'>
-      <ul class='posts-content__list'>
+  <div class='main-content'>
+    <div class='main-content__field'>
+      <ul class='main-content__list'>
         <% @posts.each do |post|%>
           <%= render partial: 'posts/post', locals: { post: post } %>
         <% end %>

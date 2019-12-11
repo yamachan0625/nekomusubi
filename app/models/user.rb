@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
           mount_uploader :avatar, AvatarUploader
           has_many :posts, dependent: :destroy
+          has_many :messages, dependent: :destroy
+          has_many :entries, dependent: :destroy
 
           def self.from_omniauth(auth)
           where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

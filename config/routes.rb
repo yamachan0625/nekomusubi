@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index, :edit, :update, :create, :new, :show]
   resources :posts, only: [:index, :show, :create, :show]
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show]
   root 'tops#index'
 end
