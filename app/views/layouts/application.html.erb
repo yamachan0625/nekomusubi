@@ -3,12 +3,12 @@
   <head>
     <title>Nekomusubi</title>
     <%= csrf_meta_tags %>
+    <%= include_gon %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'  %> 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GMAP_API_KEY'] %>"></script>
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
-    <%= include_gon %>
   </head>
 
   <body>
