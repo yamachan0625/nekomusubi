@@ -16,11 +16,11 @@
         <ul>
           <li class='my_window_name'><%= current_user.nickname%></li>
           <li class='my_page_btn'>
-            <%= icon('fas', 'home') %>
+            <%#<%= icon('fas', 'home') %>
             <%= link_to 'マイページ', user_path(current_user.id)%>
           </li>
           <li class='logout_btn'>
-            <%= icon('fas', 'sign-out-alt') %>
+            <%#<%= icon('fas', 'sign-out-alt') %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
           </li>
         </ul>

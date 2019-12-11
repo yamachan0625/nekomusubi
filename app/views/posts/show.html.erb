@@ -58,7 +58,7 @@
       <% unless @user.id == current_user.id %>
         <% if @isRoom == true %>
           <div class='post-detail-message-btn'>
-            <%= icon("far","envelope") %>
+            <%#<%= icon("far","envelope") %>
             <a href="/rooms/<%= @roomId %>">メッセージする</a>
           </div>
         <% else %>
@@ -67,7 +67,7 @@
               <%= e.hidden_field :user_id, value: @user.id %>
             <% end %>
             <div class='post-detail-message-btn'>
-              <%= icon("far","envelope") %>
+              <%#<%= icon("far","envelope") %>
               <%= f.submit "メッセージする"%>
             </div>
           <% end %>
