@@ -61,7 +61,8 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-gem 'font-awesome-rails'
+	
+gem "font-awesome-sass"
 gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
