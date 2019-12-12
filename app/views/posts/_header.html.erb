@@ -17,7 +17,7 @@
           <li class='my_window_name'><%= current_user.nickname%></li>
           
           <li class='my_page_btn'>
-            <a href="/users/3">
+            <a href="/users/<%= current_user.id%>">
               <%= fa_icon "user" %>
                 マイページ
             </a>
