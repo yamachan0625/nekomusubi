@@ -76,7 +76,7 @@
     border: 1px solid	#D19062;
     box-shadow: 0px 2px 7px 0px white;
     background-color: #DBD4D0; 
-    padding: 10px 10px;
+    
     & i{
       padding-right: 5px;
       color: #3A1602;
@@ -84,7 +84,8 @@
     & a{
       text-decoration: none;
       color:#3A1602;
-      
+      padding: 10px;
+      display: block;
     }
   }
 }
@@ -96,10 +97,6 @@
 
 
 
-.my_page_btn:hover{
-  background-color: #AFA097;
-  cursor: pointer;
-}
 
 .logout_btn:hover{
   background-color: #AFA097;

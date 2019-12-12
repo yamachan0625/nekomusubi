@@ -15,13 +15,18 @@
       <div class='my_window'>
         <ul>
           <li class='my_window_name'><%= current_user.nickname%></li>
+          
           <li class='my_page_btn'>
-            <%#<%= icon('fas', 'home') %>
-            <%= link_to 'マイページ', user_path(current_user.id)%>
+            <a href="/users/3">
+              <%= fa_icon "user" %>
+                マイページ
+            </a>
           </li>
           <li class='logout_btn'>
-            <%#<%= icon('fas', 'sign-out-alt') %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
+            <a class="btn" rel="nofollow" data-method="delete" href="/users/sign_out">
+              <%= fa_icon "sign-out" %>
+                ログアウト
+            </a>
           </li>
         </ul>
       </div>
