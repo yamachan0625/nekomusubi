@@ -62,7 +62,7 @@ group :production do
 end
 
 	
-gem "font-awesome-sass"
+gem "font-awesome-rails"
 gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
