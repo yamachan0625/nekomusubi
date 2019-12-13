@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    gon.current_user_id = current_user.id
     @room = Room.find(params[:id])
     @entry_all = Entry.where(user_id: current_user.id)
     @current_user_rooms_id = []
