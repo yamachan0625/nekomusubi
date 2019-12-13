@@ -23,7 +23,7 @@
   </div>
   
   <div class='main-content'>
-    <div class='message-content'>
+    <%# <div class='message-content'> %>
 
       <div class='message-opponent'>
         <a href="/users/<%= @entry_opponent_id %>">
@@ -33,8 +33,9 @@
       </div>
       
 
-      <% if @messages.present? %>
-        <div class= 'message-box'>
+      
+      <div class= 'message-box'>
+        <% if @messages.present? %>
           <% @messages.each do |m| %>
             <% unless m.user_id == current_user.id %>
               <div class='message-box__message', data-message-id="<%=m.id%>",  data-room-id="<%=m.room.id%>">
@@ -61,7 +62,6 @@
               </div>
             <%end%>
           <%end%>
-        </div>
       <% else %>
         <h1 class="message-center">
           メッセージはまだありません
@@ -77,6 +77,6 @@
       <% end %>
     </div>
     
-  </div>
+  <%# </div> %>
 
 </div>
