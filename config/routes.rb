@@ -6,7 +6,18 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:index, :edit, :update, :create, :new, :show]
   resources :posts, only: [:index, :show, :create, :show]
+  resources :rooms, only: [:create,:show] do
+    collection do
+      get 'new_message', defaults: { format: 'json' }
+  end
+end
+    # namespace :api do
+    #   resources :messages, only: :index, defaults:{format: 'json'}
+    # end
   resources :messages, only: [:create]
-  resources :rooms, only: [:create,:show]
+    
+
+    
+  
   root 'tops#index'
 end
