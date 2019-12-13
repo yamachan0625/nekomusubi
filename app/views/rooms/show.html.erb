@@ -37,7 +37,7 @@
         <div class= 'message-box'>
           <% @messages.each do |m| %>
             <% unless m.user_id == current_user.id %>
-              <div class='message-box__message'>
+              <div class='message-box__message', data-message-id="<%=m.id%>",  data-room-id="<%=m.room.id%>">
                 <div class= 'message-box__message__image'>
                   <a href="/users/<%= m.user_id %>"><%=image_tag m.user.avatar.to_s %></a>
                 </div>
@@ -50,7 +50,7 @@
                 </div>
               </div>
             <%else%>
-              <div class='message-box__message2'>
+              <div class='message-box__message2', data-message-id="<%=m.id%>",  data-room-id="<%=m.room.id%>">
                 <div class= 'message-box__message2__style2'>
                   <%= m.message %>
                   <br>
