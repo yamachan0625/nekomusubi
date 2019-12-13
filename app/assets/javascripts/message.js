@@ -52,10 +52,6 @@ $( document ).on('turbolinks:load', function() {
     .fail(function(){
       alert("メッセージ送信に失敗しました");
     })
-
-    .always(function(data){
-      $('.message-form__submit').removeAttr("disabled");
-      })
       
   })
 
