@@ -86,7 +86,6 @@ $( document ).on('turbolinks:load', function() {
           }
         })
         .done(function(messages) {
-          // console.log('ok')
           var insertHTML = '';
           //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
           $.each(messages, function(i, message) {
@@ -106,5 +105,5 @@ $( document ).on('turbolinks:load', function() {
       }
     }
   };
-  setInterval(reloadMessages, 10000);
+  setInterval(reloadMessages, 7000);
 });
