@@ -112,9 +112,12 @@
 }
 
 .message-box{
+  height: calc(100vh - 180px);
+  width: 100%;
+  background-color: #F8F4F1;
+  overflow: scroll;
   &__message{
     width: 100%;
-    height: 100%;
     padding: 20px 0;
     display: flex;
     & img{
@@ -136,7 +139,6 @@
   &__message2{
     overflow: hidden;
     width: 100%;
-    height: 100%;
     &__style2{
     padding:10px;
     float: right;

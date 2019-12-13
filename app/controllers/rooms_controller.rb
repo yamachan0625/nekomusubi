@@ -8,6 +8,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    gon.current_user_id = current_user.id
     @room = Room.find(params[:id])
     @entry_all = Entry.where(user_id: current_user.id)
     @current_user_rooms_id = []
@@ -37,7 +38,6 @@ class RoomsController < ApplicationController
       @dm_member << User.find(member) #配列に追加する
     end
 
-    # binding.pry
 
     #現在ログインしているユーザーのidとそれにひもづくルームのidをwhereメソッドで探しifで条件分岐
     if Entry.where(user_id: current_user.id,room_id: @room.id).present? 
@@ -51,7 +51,6 @@ class RoomsController < ApplicationController
           @your_message << message
         end
       end
-      # binding.pry
 
       @message = Message.new #メッセージ作成のためにインスタンスの生成
       @entries = @room.entries #ルームにひもづくentriesテーブルの自分と相手の二人分の情報を取り出し代入
@@ -65,6 +64,12 @@ class RoomsController < ApplicationController
       redirect_back(fallback_location: root_path) #前のページにリダイレクト
     end
 
+  end
+
+  def new_message
+    room = Message.find(params[:id]).room  
+    last_messages = params[:id].to_i
+    @messages = room.messages.where("id > #{last_messages}")
   end
 
 end
