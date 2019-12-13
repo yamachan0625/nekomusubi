@@ -58,12 +58,19 @@ $( document ).on('turbolinks:load', function() {
   var reloadMessages = function() {
     if (window.location.href.match(/\/rooms\/\d+/)){
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    // var last_message_id = $('.message-box__message').last().data("message-id");
+    
     
       if($('.message-box__message')[0] || $('.message-box__message2')[0]){
-        var last_message_id = $('.message-box__message2').last().data("message-id");
+        var message_id = $('.message-box__message').last().data("message-id");
+        var message_id2 = $('.message-box__message2').last().data("message-id");
         var current_user_id = gon.current_user_id;
-        
+
+        if( message_id > message_id2){
+          var last_message_id = message_id
+        }else{
+          var last_message_id = message_id2 
+        }
+        console.log(last_message_id)
         $.ajax({
           url: 'new_message',
           //ルーティングで設定した通りhttpメソッドをgetに指定
