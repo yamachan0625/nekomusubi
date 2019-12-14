@@ -3,7 +3,13 @@ $( document ).on('turbolinks:load', function() {
   
 
   function buildMessage(message){
+    var avatars = gon.avatars.slice(message.user_id - 1,message.user_id);
+    console.log(avatars)
+
     var html = `<div class="message-box__message" data-message-id= "${message.id}">
+                  <div class="message-box__message__image">
+                    <a href="/users/${message.user_id}"><img src=${avatars}></a>
+                  </div>
                   <div class="message-box__message__style" >
                     ${message.message}
                     <br>
@@ -16,6 +22,7 @@ $( document ).on('turbolinks:load', function() {
   }
 
   function buildMessage2(message){
+
     var html = `<div class="message-box__message2" data-message-id= "${message.id}">
                   <div class="message-box__message2__style2" >
                     ${message.message}
@@ -68,6 +75,8 @@ $( document ).on('turbolinks:load', function() {
         var message_id = $('.message-box__message').last().data("message-id");
         var message_id2 = $('.message-box__message2').last().data("message-id");
         var current_user_id = gon.current_user_id;
+        
+        
 
         if( message_id > message_id2){
           var last_message_id = message_id
@@ -89,6 +98,7 @@ $( document ).on('turbolinks:load', function() {
           var insertHTML = '';
           //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
           $.each(messages, function(i, message) {
+            //user_idがcurrent_userのidととそうでないものを分岐させる
             if(message.user_id == current_user_id){
               insertHTML += buildMessage2(message)
             }else{

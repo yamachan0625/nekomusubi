@@ -9,6 +9,12 @@ class RoomsController < ApplicationController
 
   def show
     gon.current_user_id = current_user.id
+    gon.avatars = []
+    user_all = User.all
+    user_all.each do |u|
+      gon.avatars << u.avatar.url
+    end
+
     @room = Room.find(params[:id])
     @entry_all = Entry.where(user_id: current_user.id)
     @current_user_rooms_id = []
@@ -67,7 +73,7 @@ class RoomsController < ApplicationController
   end
 
   def new_message
-    room = Message.find(params[:id]).room  
+    room = Message.find(params[:id]).room
     last_messages = params[:id].to_i
     @messages = room.messages.where("id > #{last_messages}")
   end
