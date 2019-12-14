@@ -16,7 +16,7 @@
             <%= image_tag current_user.avatar.to_s, class: 'avatar_present_img' %>
             <label class='delete_btn'><%= f.check_box :remove_avatar %> 画像を削除</label>
           <% else %>
-            <%= image_tag 'default.jpg', class: 'avatar_present_img' %>
+            <%= image_tag ("default.jpg"), class: 'avatar_present_img' %>
             <%= f.hidden_field :avatar_cache %>
           <% end %>
             <label>
