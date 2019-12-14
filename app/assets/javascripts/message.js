@@ -9,7 +9,7 @@ $( document ).on('turbolinks:load', function() {
     }else{
       var avatar = avatar
     }
-    console.log(avatars)
+    console.log(avatar)
     
     var html = `<div class="message-box__message" data-message-id= "${message.id}">
                   <div class="message-box__message__image">
