@@ -8,7 +8,7 @@ $( document ).on('turbolinks:load', function() {
 
     var html = `<div class="message-box__message" data-message-id= "${message.id}">
                   <div class="message-box__message__image">
-                    <a href="/users/${message.user_id}"><img src=${avatars}></a>
+                    <a href="/users/${message.user_id}"><img src="/assets/default-86fc73ba77fb9b61a8a351f2ef0a9ec4a2e9a5b3f2be63f28c802f6df6b4f27a.jpg"></a>
                   </div>
                   <div class="message-box__message__style" >
                     ${message.message}
