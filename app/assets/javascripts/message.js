@@ -3,12 +3,17 @@ $( document ).on('turbolinks:load', function() {
   
 
   function buildMessage(message){
-    var avatars = gon.avatars.slice(message.user_id - 1,message.user_id);
+    var avatar = gon.avatars.slice(message.user_id - 1,message.user_id);
+    if(avatar == "default.jpg"){
+      var avatar = "/assets/default-86fc73ba77fb9b61a8a351f2ef0a9ec4a2e9a5b3f2be63f28c802f6df6b4f27a.jpg"
+    }else{
+      var avatar = avatar
+    }
     console.log(avatars)
-
+    
     var html = `<div class="message-box__message" data-message-id= "${message.id}">
                   <div class="message-box__message__image">
-                    <a href="/users/${message.user_id}"><img src="/assets/default-86fc73ba77fb9b61a8a351f2ef0a9ec4a2e9a5b3f2be63f28c802f6df6b4f27a.jpg"></a>
+                    <a href="/users/${message.user_id}"><img src=${avatar}></a>
                   </div>
                   <div class="message-box__message__style" >
                     ${message.message}
@@ -22,7 +27,7 @@ $( document ).on('turbolinks:load', function() {
   }
 
   function buildMessage2(message){
-
+    "default.jpg"
     var html = `<div class="message-box__message2" data-message-id= "${message.id}">
                   <div class="message-box__message2__style2" >
                     ${message.message}
@@ -34,7 +39,6 @@ $( document ).on('turbolinks:load', function() {
                 </div>`
     return html;
   }
-
 
 
   $('#new_message').on('submit', function(e){
