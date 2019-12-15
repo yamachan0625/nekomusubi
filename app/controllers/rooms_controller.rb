@@ -21,12 +21,20 @@ class RoomsController < ApplicationController
     @entry_all.each do |e|
       @current_user_rooms_id << e.room_id
     end
+
     @rooms = Room.all
+    @last_messages =[]
     @current_user_rooms = [] #ログインしているユーザーが所属しているDM
     @current_user_rooms_id.each do |i|
       @current_user_rooms << @rooms.find(i)
+      if Room.find(i).messages.last == ""
+        @last_messages << 0
+      else
+        @last_messages << Room.find(i).messages.last
+      end
     end
-
+    
+    # binding.pry
     @room_id = []
     @dm_member_id = []
     @current_user_rooms.each do |room| #ログインしているユーザーが所属しているDMをeachで回す
@@ -44,7 +52,7 @@ class RoomsController < ApplicationController
       @dm_member << User.find(member) #配列に追加する
     end
 
-
+    # binding.pry
     #現在ログインしているユーザーのidとそれにひもづくルームのidをwhereメソッドで探しifで条件分岐
     if Entry.where(user_id: current_user.id,room_id: @room.id).present? 
       @messages = @room.messages

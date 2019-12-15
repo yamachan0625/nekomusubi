@@ -6,13 +6,20 @@
 }
 
 .message-list{
-  &__message{
+  &__content{
     padding-left: 10px;
     display: inline-block;
     vertical-align: middle;
     color: white;
     width: 300px;
     overflow: hidden;
+    &__message{
+      font-size: 14px;
+    }
+    &__name{
+      font-size: 20px;
+      font-weight: bold;
+    }
   }
   & h1{
     height: 60px;
@@ -23,7 +30,7 @@
     color: white;
     text-decoration: underline;
     text-decoration-color: red;
-    font-weight: 600;
+    font-weight: bold;
   }
   & a{
     display: block;
@@ -34,7 +41,7 @@
       background-color: #F8F4F1;
       box-shadow: 0 0 15px 0 white;
       border-right: solid 5px red;
-      & p{
+      & div{
         color: black;
       }
     }
@@ -43,10 +50,6 @@
       width: 80px;
       border-radius: 50%;
       display: inline-block;
-    }
-    & p{
-      font-weight: 500;
-      font-size: 20px;
     }
   }
 }

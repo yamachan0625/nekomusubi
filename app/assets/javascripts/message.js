@@ -9,7 +9,6 @@ $( document ).on('turbolinks:load', function() {
     }else{
       var avatar = avatar
     }
-    console.log(avatar)
     
     var html = `<div class="message-box__message" data-message-id= "${message.id}">
                   <div class="message-box__message__image">
@@ -87,7 +86,6 @@ $( document ).on('turbolinks:load', function() {
         }else{
           var last_message_id = message_id2 
         }
-        console.log(last_message_id)
         $.ajax({
           url: 'new_message',
           //ルーティングで設定した通りhttpメソッドをgetに指定
@@ -113,8 +111,7 @@ $( document ).on('turbolinks:load', function() {
           $('.message-box').animate({scrollTop: $('.message-box')[0].scrollHeight}, 'fast');
         })
         .fail(function() {
-          // alert("自動更新に失敗しました")
-          console.log('ng')
+          alert("自動更新に失敗しました")
         });
       }
     }

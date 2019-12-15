@@ -6,16 +6,26 @@
       <div class='message-list__title'>
         <h1>メッセージ</h1>
       </div>
-      <% @dm_member.zip(@room_id) do |member, i| %>
+      <% @dm_member.zip(@room_id, @last_messages) do |member, id, last_message| %>
         <% if member.id == @entry_opponent_id %>
-          <a href="/rooms/<%= i %>" style = 'background-color: #F8F4F1; box-shadow: 0 0 10px 0 white; border-right: solid 5px red;'>
+          <a href="/rooms/<%= id %>" style = 'background-color: #F8F4F1; box-shadow: 0 0 10px 0 white; border-right: solid 5px red;'>
             <%= image_tag member.avatar.to_s%>
-            <p style = 'color: black;'><%= member.nickname%></p>
+            <div class='message-list__content'>
+              <div class='message-list__content__name', style = 'color: black;'><%= member.nickname%></div>
+              <%unless last_message == nil%>
+              <div class='message-list__content__message', style = 'color: black;'><%= last_message.message%></div>
+              <%end%>
+            </div>
           </a>
         <%else%>
-          <a href="/rooms/<%= i %>" >
+          <a href="/rooms/<%= id %>" >
             <%= image_tag member.avatar.to_s%>
-            <p ><%= member.nickname%></p>
+            <div class='message-list__content'>
+              <div class='message-list__content__name'><%= member.nickname%></div>
+              <%unless last_message == nil %>
+              <div class='message-list__content__message'><%= last_message.message %></div>
+              <%end%>
+            </div>
           </a>
         <%end%>
       <%end%>
@@ -77,6 +87,5 @@
       <% end %>
     </div>
     
-  <%# </div> %>
 
 </div>
