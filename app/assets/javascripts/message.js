@@ -3,6 +3,7 @@ $( document ).on('turbolinks:load', function() {
   
 
   function buildMessage(message){
+    // メッセージを送ったuserのidを用いて全userのavatarデータの入ったgon.avatarsの配列からsliceを使ってavatarを取得する
     var avatar = gon.avatars.slice(message.user_id - 1,message.user_id);
     if(avatar == "default.jpg"){
       var avatar = "/assets/default-86fc73ba77fb9b61a8a351f2ef0a9ec4a2e9a5b3f2be63f28c802f6df6b4f27a.jpg"
@@ -116,5 +117,5 @@ $( document ).on('turbolinks:load', function() {
       }
     }
   };
-  setInterval(reloadMessages, 7000);
+  // setInterval(reloadMessages, 7000);
 });
