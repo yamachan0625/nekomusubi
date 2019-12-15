@@ -6,7 +6,7 @@
       <div class='message-list__title'>
         <h1>メッセージ</h1>
       </div>
-      <% @dm_member.zip(@room_id, @last_messages) do |member, id, last_message| %>
+      <% @dm_member.zip(@current_user_rooms_id, @last_messages) do |member, id, last_message| %>
         <% if member.id == @entry_opponent_id %>
           <a href="/rooms/<%= id %>" style = 'background-color: #F8F4F1; box-shadow: 0 0 10px 0 white; border-right: solid 5px red;'>
             <%= image_tag member.avatar.to_s%>
@@ -33,14 +33,12 @@
   </div>
   
   <div class='main-content'>
-    <%# <div class='message-content'> %>
-
-      <div class='message-opponent'>
-        <a href="/users/<%= @entry_opponent_id %>">
-          <%=image_tag @entry_opponent.avatar.to_s%>
-          <%= @entry_opponent.nickname%>さん
-        </a>
-      </div>
+    <div class='message-opponent'>
+      <a href="/users/<%= @entry_opponent_id %>">
+        <%=image_tag @entry_opponent.avatar.to_s%>
+        <%= @entry_opponent.nickname%>さん
+      </a>
+    </div>
       
 
       
