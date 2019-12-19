@@ -124,3 +124,19 @@
   color: #f76f72;
   
 }
+
+.post-detail-delete-btn{
+  text-align: center;
+  & a{
+    color:gray;
+    background-color: white;
+    text-decoration: none;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 10px 30px;
+    &:hover{
+      background-color: gray;
+      color: white;
+    }
+  }
+}

@@ -4,20 +4,15 @@ Rails.application.routes.draw do
     get 'profile_edit', to: 'users/registrations#profile_edit', as: 'profile_edit'
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
+
   resources :users, only: [:index, :edit, :update, :create, :new, :show]
-  resources :posts, only: [:index, :show, :create, :show]
+  resources :posts, only: [:index, :show, :create, :show, :destroy]
   resources :rooms, only: [:create,:show] do
     collection do
       get 'new_message', defaults: { format: 'json' }
+    end
   end
-end
-    # namespace :api do
-    #   resources :messages, only: :index, defaults:{format: 'json'}
-    # end
   resources :messages, only: [:create]
     
-
-    
-  
   root 'tops#index'
 end

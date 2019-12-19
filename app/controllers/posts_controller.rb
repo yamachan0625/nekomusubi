@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :set_post, only: [:show, :destroy]
+
   def index
     @posts = Post.all.order("created_at DESC").page(params[:page]).per(12)
     @posts2 = Post.all
@@ -13,8 +16,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post_show = Post.find(params[:id])
-    @hash = Gmaps4rails.build_markers(@post_show) do |post, marker|
+    @hash = Gmaps4rails.build_markers(@post) do |post, marker|
       marker.lat post.latitude
       marker.lng post.longitude
       marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
@@ -22,7 +24,7 @@ class PostsController < ApplicationController
       marker.json({ id: post.id, })
     end
 
-    @user = @post_show.user
+    @user = @post.user
     @currentUserEntry = Entry.where(user_id: current_user.id)
     @userEntry = Entry.where(user_id: @user.id)
 
@@ -54,9 +56,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    if @post.user.id == current_user.id
+      @post.destroy
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to :back , alert: '削除できません'
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :address, :image, :content,:latitude, :longitude, :remove_image)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 
 end
