@@ -42,11 +42,19 @@
               <%= @post.title%>
             </div>
           </div>
-          <div class='post-detail__content'>
-            <div class='post-detail__content__left'>
+          <div class='post-detail__title'>
+            <div class='post-detail__title__left'>
+              <P>場所</p>
+            </div>
+            <div class='post-detail__title__right'>
+              <%= @post.address%>
+            </div>
+          </div>
+          <div class='post-detail__title'>
+            <div class='post-detail__title__left'>
               <P>現在の状況</p>
             </div>
-            <div class='post-detail__content__right'>
+            <div class='post-detail__title__right'>
               <%= @post.content%>
             </div>
           </div>
