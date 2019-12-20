@@ -71,6 +71,7 @@
   top: 65px;
   right: 5px;
   display: none;
+  width: 150px;
   & li{
     text-align: center;
     border: 1px solid	#D19062;
@@ -86,20 +87,19 @@
       color:#3A1602;
       padding: 10px;
       display: block;
+      &:hover{
+        background-color: #AFA097;
+      }
     }
   }
 }
 
 .my_window_name{
-  font-size: 12px;
+  font-size: 16px;
   color: black;
-}
-
-
-
-
-.logout_btn:hover{
-  background-color: #AFA097;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
 }
 
 

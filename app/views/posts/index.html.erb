@@ -18,6 +18,7 @@
 
   <div class='main-content'>
     <div class='main-content__field'>
+      
       <ul class='main-content__list'>
         <% @posts.each do |post|%>
           <%= render partial: 'posts/post', locals: { post: post } %>
