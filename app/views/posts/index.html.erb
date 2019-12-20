@@ -62,8 +62,8 @@
       
         <div class="post_field address_field">
           <label>住所<span>必須</span></label>
-          <%= f.text_field :address, placeholder: '住所を入力するか、現在位置を取得をクリック', class: :post_input %>
-          <label><span class='address_label'>入力するかボタンをクリックしてください</span></label>
+          <%= f.text_field :address, placeholder: '現在位置を取得をクリックで自動入力', class: :post_input %>
+          <label><span class='address_label'>現在位置を取得をクリックしてください</span></label>
         </div>
 
         <div>
@@ -83,11 +83,11 @@
         <label><span class='btn_label'>左のマップに現在地が表示されればOKです。現在地の取得に少し時間がかかる場合があります。</span></label>
       
         <div class="post_actions">
-          <%= f.submit %>
+          <%= f.submit "登録する", id: 'new-post-btn'%>
         </div>
-
     <% end %>
-        <p><button onclick="getMyPlace()", id='get-my-place-btn'>現在位置を取得</button></p>
+      <p><button onclick="getMyPlace()", id='get-my-place-btn'>現在位置を取得</button></p>
+        
   </div>
 
 </div>
@@ -106,6 +106,7 @@
       var output = document.getElementById("result");
       var output_latitude = document.getElementById("output_latitude");
       var output_longitude = document.getElementById("output_longitude");
+      var current_address = document.getElementById("post_address");
       if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
         alert("<p>Geolocationはあなたのブラウザーでサポートされておりません</p>");
         return;
@@ -113,26 +114,38 @@
       function success(position) {
         var latitude  = position.coords.latitude;//緯度
         var longitude = position.coords.longitude;//経度
-        output_latitude.value = latitude
-        output_longitude.value = longitude
+        output_latitude.value = latitude //緯度の数値をフォームに挿入
+        output_longitude.value = longitude  //経度の数値をフォームに挿入
         // 位置情報
         var latlng = new google.maps.LatLng( latitude , longitude ) ;
         // Google Mapsに書き出し
-        var map = new google.maps.Map( document.getElementById( 'map' ) , {
-            zoom: 15 ,// ズーム値
-            center: latlng ,// 中心座標
-        } ) ;
+        var map = new google.maps.Map( document.getElementById('map') , {
+          zoom: 15 ,// ズーム値
+          center: latlng ,// 中心座標
+        });
         // マーカーの新規出力
-        new google.maps.Marker( {
-            map: map ,
-            position: latlng ,
-        } ) ;
-      };
-      function error() {
-        //エラーの場合
-        ale("住所を取得できません");
-      };
-      navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
-    }
+        new google.maps.Marker({
+          map: map ,
+          position: latlng ,
+        });
+
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            current_address.value = results[0].formatted_address.replace(/^日本, /, ''); //住所をフォームに挿入
+            }else{
+              alert("エラーが発生しました。")
+            }
+        });
+
+        };
+        function error() {
+          //エラーの場合
+          ale("住所を取得できません");
+        };
+        navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
+      }
+      
 
 </script>
