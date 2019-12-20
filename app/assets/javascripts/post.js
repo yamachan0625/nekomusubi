@@ -1,4 +1,8 @@
 $( document ).on('turbolinks:load', function() {
+
+  
+
+
   //登録ボタンを押したときタイトル枠を赤く＆警告を表示する
   $('#new_post').submit(function() {
     if($('#post_title').val() == ''){
@@ -50,7 +54,9 @@ $( document ).on('turbolinks:load', function() {
   })
 
 
-
+  $('#get-my-place-btn').click(function(){
+    $('#get-my-place-btn')
+  });
 
 
   // //現在地取得ボタンを押すと住所入力欄が消えてが消えてメッセージを表示する

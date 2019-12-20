@@ -185,7 +185,6 @@
   display: none;
   position: fixed;
   width: 70%;
-  height: 100%;
   top: 0;
   right: 0;
   margin-left: 30%;
@@ -215,7 +214,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    margin:10px auto;
+    margin:auto;
     height: fit-content;
     background-color: white;
     border: 2px solid	#D19062;
@@ -227,23 +226,26 @@
 }
 
 #get-my-place-btn{
+  border: 2px solid	#7C544D;
   height: 40px;
-  width: 40%;
+  line-height: 40px;
+  width: 90%;
   font-weight: bold;
   font-size: 15px;
-  position: absolute;
   cursor: pointer;
-  background-color:#aaaaaa;
-  border-style:none;
+  background-color: #7C544D;
   color: white;
-  letter-spacing: 1px;
   transition: .3s;
   border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  bottom: 5px;
   &:hover{
     cursor: pointer;
+    border: 2px solid	#7C544D;
     background-color: white;
-    color: #aaaaaa;
-    border: 2px solid #aaaaaa;
+    color: #7C544D;
   }
 }
 
@@ -273,7 +275,7 @@
 }
 
 .post_field{
-  padding: 10px 0;
+  padding: 5px 0;
   & p{
     text-align: center;
   }
@@ -290,7 +292,7 @@
     border-radius: 5px;
   }
   & label {
-    display: block;
+    display: inline-block;
     & span{
       color: red;
       padding-left: 10px;
@@ -303,7 +305,7 @@
 }
 
 #post_address{
-  display: block;
+  display: none;
 }
 
 .none{
@@ -315,7 +317,10 @@
   box-sizing: border-box;
 }
 
+
+
 .post_actions{
+  margin: 60px auto 0;
   & input{
   background-color:rgba(191,142,100,1);
   border-style:none;
@@ -334,6 +339,18 @@
       border: 2px solid rgba(191,142,100,1);
     }
   }
+}
+
+#address-field{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  white-space: nowrap;
+  overflow: auto;
+  border: 1px solid #D19062;
+  border-radius: 5px;
+  display: none;
+  padding: 0 10px;
 }
 
 .title_label{
