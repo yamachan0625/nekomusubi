@@ -18,6 +18,7 @@
 
   <div class='main-content'>
     <div class='main-content__field'>
+      
       <ul class='main-content__list'>
         <% @posts.each do |post|%>
           <%= render partial: 'posts/post', locals: { post: post } %>
@@ -59,11 +60,10 @@
           <%= f.text_field :title, placeholder: 'タイトルをつけてください', class: :post_input %>
           <label><span class='title_label'>入力してください</span></label>
         </div>
-      
-        <div class="post_field address_field">
-          <label>住所<span>必須</span></label>
-          <%= f.text_field :address, placeholder: '現在位置を取得をクリックで自動入力', class: :post_input %>
-          <label><span class='address_label'>現在位置を取得をクリックしてください</span></label>
+
+
+        <div>
+          <%= f.text_field :address %>
         </div>
 
         <div>
@@ -80,13 +80,16 @@
           <label><span class='detail_label'>入力してください</span></label>
         </div>
 
-        <label><span class='btn_label'>左のマップに現在地が表示されればOKです。現在地の取得に少し時間がかかる場合があります。</span></label>
+        <div id= "address-field">
+          
+        </div>
       
         <div class="post_actions">
           <%= f.submit "登録する", id: 'new-post-btn'%>
         </div>
     <% end %>
-      <p><button onclick="getMyPlace()", id='get-my-place-btn'>現在位置を取得</button></p>
+
+        <button onclick="getMyPlace()", id='get-my-place-btn'>クリックして現在位置を取得して下さい</button>
         
   </div>
 
@@ -133,8 +136,11 @@
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({'location': latlng}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
-            current_address.value = results[0].formatted_address.replace(/^日本, /, ''); //住所をフォームに挿入
-            $('.post_field').append(results[0].formatted_address.replace(/^日本, /, ''))
+            document.getElementById("get-my-place-btn").style.display="none";
+            document.getElementById("address-field").style.display="block";
+            var address = results[0].formatted_address.replace(/^日本, /, '')
+            current_address.value = address; //住所をフォームに挿入
+            $('#address-field').append(address);
             }else{
               alert("エラーが発生しました。")
             }
