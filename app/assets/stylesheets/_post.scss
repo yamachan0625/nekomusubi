@@ -85,6 +85,11 @@
     width: 100%;
     background-color: #F8F4F1;
     padding-top: 20px;
+    & span{
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
   }
   &__list{
     display: flex;

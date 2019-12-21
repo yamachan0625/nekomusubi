@@ -8,4 +8,10 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :title, :content, :address, :image, presence: true
+
+  def self.search(search)
+    return Post.all unless search
+    Post.where(['address LIKE ?', "%#{search}%"])
+  end
+
 end

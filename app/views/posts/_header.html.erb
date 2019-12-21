@@ -4,6 +4,15 @@
       <%= image_tag ("neko_logo.png"), class: :header_logo_image%>
       <% end %>
     </div>
+    <div class='search-field'>
+      <%= form_tag search_posts_path,:method => 'get' do %>
+        <%= text_field_tag :search,'', placeholder: "住所で検索" %>
+        <label>
+          <%= submit_tag 'Search', :name => nil , class: "search-field__submit"%>
+          <%= fa_icon "search" %>
+        </label>
+      <% end %>
+    </div>
     <div class='sign_btn_field'>
     <% if user_signed_in? %>
       <div class='new_post_btn_field'>

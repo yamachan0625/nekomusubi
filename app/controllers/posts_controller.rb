@@ -65,6 +65,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @posts = Post.search(params[:search]).page(params[:page]).per(12)
+    @result = params[:search]
+    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
+      marker.lat post.latitude
+      marker.lng post.longitude
+      marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
+
+      marker.json({ id: post.id, })
+    end
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :address, :image, :content,:latitude, :longitude, :remove_image)

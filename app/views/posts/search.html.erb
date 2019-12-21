@@ -17,7 +17,8 @@
 
   <div class='main-content'>
     <div class='main-content__field'>
-      
+      <span><%=@result%></span>の検索結果
+      <%=@posts.length%>件
       <ul class='main-content__list'>
         <% @posts.each do |post|%>
           <%= render partial: 'posts/post', locals: { post: post } %>
@@ -26,72 +27,6 @@
       <%= paginate @posts %>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-<div class='modal'>
-
-  <%= fa_icon "times-circle" %>
-
-  <div class='post-content__post'>
-
-    <%= form_for @post do |f| %>
-
-      <label>
-        <div id='image_field'>
-        <%= image_tag @post.image.to_s, id: :img_prev %>
-          <div class="post_field">
-            <p class='upload_name'>クリックしてファイルをアップロード<span>(必須)</span></p>
-            <%= fa_icon "image" %>
-            <%= f.file_field :image%>
-          </div>
-        </div>
-      </label>
-      <%= f.check_box :remove_image %> 画像を削除
-
-      <div class="post_field">
-          <label>タイトル<span>必須</span></label>
-          <%= f.text_field :title, placeholder: 'タイトルをつけてください', class: :post_input %>
-          <label><span class='title_label'>入力してください</span></label>
-        </div>
-
-
-        <div>
-          <%= f.text_field :address %>
-        </div>
-
-        <div>
-          <%= f.text_field :latitude, id: :output_latitude %>
-        </div>
-
-        <div>
-          <%= f.text_field :longitude, id: :output_longitude %>
-        </div>
-
-        <div class="post_field">
-          <label class='detail'>詳細<span>必須</span></label>
-          <%= f.text_area :content, placeholder: '現在の状況を書いてください', class: :post_input %>
-          <label><span class='detail_label'>入力してください</span></label>
-        </div>
-
-        <div id= "address-field">
-          
-        </div>
-      
-        <div class="post_actions">
-          <%= f.submit "登録する", id: 'new-post-btn'%>
-        </div>
-    <% end %>
-
-        <button onclick="getMyPlace()", id='get-my-place-btn'>クリックして現在位置を取得して下さい</button>
-        
-  </div>
-
 </div>
 
 <script type="text/javascript">
