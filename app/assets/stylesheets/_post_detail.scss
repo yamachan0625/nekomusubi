@@ -1,7 +1,7 @@
 .contributor{
   text-align: center;
   background-color: white;
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   border: 2px solid #7C544D;
   &__image{
@@ -30,13 +30,11 @@
 .post-detail-wrapper{
   padding-top: 30px;
   display: flex;
-  // height: 330px;
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
 }
 
 .post-detail-image{
-  // float: left;
   & img{
     height: 300px;
     width: 300px;
@@ -47,9 +45,7 @@
 }
 
 .post-detail{
-  // float: left;
-  // height: 300px;
-  width: 300px;
+  width: 400px;
   background-color: white;
   border: 2px solid #7C544D;
   &__title{

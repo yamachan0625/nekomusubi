@@ -7,5 +7,5 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :title, :content, presence: true
+  validates :title, :content, :address, :image, presence: true
 end

@@ -4,10 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id).order("created_at DESC").page(params[:page]).per(12)
-    
   end
 
   def edit
@@ -19,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user.id), notice: '編集が完了しました'
       #redirect先指定する posts#index
     else
-      render :edit
+      redirect_to user_path(current_user.id), alert: '編集に失敗しました'
     end
   end
 
