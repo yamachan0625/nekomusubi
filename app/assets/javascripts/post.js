@@ -59,22 +59,6 @@ $( document ).on('turbolinks:load', function() {
   });
 
 
-  // //現在地取得ボタンを押すと住所入力欄が消えてが消えてメッセージを表示する
-  // $('#get-my-place-btn').click(function(){
-  //   $('.address_field').addClass('none');
-  //   $('.btn_label').css('display','block');
-  // });
-  // //住所んを入力すると現在地取得ボタンが消える
-  // $('#post_address').keyup(function(){
-  //   $('#get-my-place-btn').addClass('none');
-  //   //住所が未入力だったらボタンを表示する
-  //   if($('#post_address').val() == ''){
-  //     $('#get-my-place-btn').removeClass('none');
-  //   }
-  // });
-
-
-
   $('.fa-times-circle').click(function(){
     $('.modal').css('display', 'none');
   })
