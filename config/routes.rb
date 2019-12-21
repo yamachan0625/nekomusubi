@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :edit, :update, :create, :new, :show]
-  resources :posts, only: [:index, :show, :create, :show, :destroy]
+  resources :posts, only: [:index, :show, :create, :show, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
   resources :rooms, only: [:create,:show] do
     collection do
       get 'new_message', defaults: { format: 'json' }
