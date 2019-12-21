@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     patch 'profile_update', to: 'users/registrations#profile_update', as: 'profile_update'
   end
 
-  resources :users, only: [:index, :edit, :update, :create, :new, :show]
+  resources :users, only: [:index, :edit, :update, :create, :new, :show, ] 
+    
   resources :posts, only: [:index, :show, :create, :show, :destroy] do
     collection do
       get 'search'
