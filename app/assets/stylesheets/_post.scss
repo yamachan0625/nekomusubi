@@ -25,7 +25,7 @@
 .left-content{
   overflow: scroll;
   height: 100%;
-  width: 30%;
+  width: 430px;
   background-color: #7C544D;
   position: fixed;
   float: left;
@@ -74,7 +74,7 @@
 
 
 .main-content{
-  width: 70%;
+  width: calc(100vw - 430px);
   box-sizing: border-box;
   background-color: #F8F4F1;
   position: relative;
@@ -139,7 +139,7 @@
   &__btn{
     text-align: center;
   background-color: white;
-  width: 60%;
+  width: 100%;
   display: block;
   line-height: 40px;
   margin: 10px auto 0;
@@ -161,10 +161,32 @@
   }
 }
 
+@media screen and (min-width: 1025px) {
+  .post-card{
+    width: 31.333%;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .post-card{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 559px) {
+  .left-content{
+    display: none;
+  }
+  .main-content{
+    width: 100vw;
+  }
+}
+
 .open-googlemap-btn{
   text-align: center;
   background-color: white;
-  width: 80%;
+  width: 100%;
   border-radius: 5px;
   display: block;
   line-height: 40px;
@@ -186,14 +208,16 @@
 
 
 
+
+
 .modal{
   background-color: rgba(0,0,0,0.7);
   display: none;
   position: fixed;
-  width: 70%;
+  width: 100%;
   top: 0;
   right: 0;
-  margin-left: 30%;
+  // margin-left: 430px;
   margin-top: 60px;
 }
 
