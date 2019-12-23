@@ -52,6 +52,7 @@
 .search-field{
   height: 58px;
   line-height: 58px;
+  text-align: center;
   // line-height: 40px;
   // margin: 0 40px;
   // position: relative;
@@ -102,15 +103,15 @@
 //   }
 // }
 
-// .sign_up_field a{
-//   color: #3399ff;
-//   border:2px solid #3399ff;
-// }
+.sign_up_field a{
+  color: #3399ff;
+  border:2px solid #3399ff;
+}
 
-// .sign_in_field a{
-//   color:  #44A828;
-//   border:2px solid  #44A828;
-// }
+.sign_in_field a{
+  color:  #44A828;
+  border:2px solid  #44A828;
+}
 
 // .my_page_btn_field {
 //   & img{
@@ -165,36 +166,44 @@
 // }
 
 
-// @media screen and (max-width: 559px) {
-//   // .header_btn{
+@media screen and (max-width: 767px) {
+  // .header_btn{
   
-//   // }
-//   .sign_up_field{
-//     text-align: center;
-//     a{
-//       color: white;
-//       border-style: none;
-//       background-color: transparent;
-//     }
-//   }
-//   .sign_in_field{
-//     text-align: center;
-//     a{
-//     color: white;
-//     border-style: none;
-//     background-color: transparent;
-//     }
-//   }
+  // }
+  .sign_up_field{
+    text-align: center;
+    height: 56px;
+    line-height: 56px;
+    font-size: 18px;
+    a{
+      color: white;
+      padding: 18px 24px 18px 24px;
+      border-style: none;
+      background-color: transparent;
+    }
+  }
+  .sign_in_field{
+    text-align: center;
+    height: 56px;
+    line-height: 56px;
+    font-size: 18px;
+    a{
+      padding: 18px 24px 18px 24px;
+    color: white;
+    border-style: none;
+    background-color: transparent;
+    }
+  }
   
-//   .my_page_btn_field{
-//     display: none;
-//   }
+  // .my_page_btn_field{
+  //   display: none;
+  // }
 
-//   .sp-menu{
-//     height: 60px;
-//     line-height: 60px;
-//     text-align: center;
-//     display: block;
-//     font-weight: bold;
-//   }
-// }
+  // .sp-menu{
+  //   height: 60px;
+  //   line-height: 60px;
+  //   text-align: center;
+  //   display: block;
+  //   font-weight: bold;
+  // }
+}

@@ -10,17 +10,33 @@
                 id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
             </li>
 
-              <div class='search-field'>
-                <%= form_tag search_posts_path,:method => 'get' do %>
-                  <%= text_field_tag :search,'', placeholder: "住所で検索" %>
-                    <%= submit_tag 'Search', :name => nil , class: "search-field__submit"%> 
-                      <%= fa_icon "search" %>
-                <% end %>
+            <div class='search-field'>
+              <%= form_tag search_posts_path,:method => 'get' do %>
+                <%= text_field_tag :search,'', placeholder: "住所で検索" %>
+                  <%= submit_tag 'Search', :name => nil , class: "search-field__submit"%> 
+                    <%= fa_icon "search" %>
+              <% end %>
+            </div>
+
+            <% if user_signed_in? %>
+              <div class='sign_up_field'>
+                <%= link_to "ログイン", user_session_path, class: :header_btn %>
               </div>
-            <li class="luxbar-item"><a href="#">Item 1</a></li>
-            <li class="luxbar-item"><a href="#">Item 2</a></li>
-            <li class="luxbar-item"><a href="#">Item 3</a></li>
-            <li class="luxbar-item"><a href="#">Item 4</a></li>
+              <div class='sign_in_field'>
+                <%= link_to "新規登録", new_user_registration_path, class: :header_btn %> 
+              </div>
+              <li class="luxbar-item"><a href="#">Item 1</a></li>
+              <li class="luxbar-item"><a href="#">Item 2</a></li>
+              <li class="luxbar-item"><a href="#">Item 3</a></li>
+              <li class="luxbar-item"><a href="#">Item 4</a></li>
+            <%else%>
+              <div class='sign_up_field'>
+                <%= link_to "ログイン", user_session_path, class: :header_btn %>
+              </div>
+              <div class='sign_in_field'>
+                <%= link_to "新規登録", new_user_registration_path, class: :header_btn %> 
+              </div>
+            <%end%>
         </ul>
     </div>
 </header>
