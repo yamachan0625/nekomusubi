@@ -19,16 +19,12 @@
             </div>
 
             <% if user_signed_in? %>
-              <div class='sign_up_field'>
-                <%= link_to "ログイン", user_session_path, class: :header_btn %>
-              </div>
-              <div class='sign_in_field'>
-                <%= link_to "新規登録", new_user_registration_path, class: :header_btn %> 
-              </div>
               <li class="luxbar-item"><a href="#">Item 1</a></li>
               <li class="luxbar-item"><a href="#">Item 2</a></li>
               <li class="luxbar-item"><a href="#">Item 3</a></li>
               <li class="luxbar-item"><a href="#">Item 4</a></li>
+              <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
+            </li>
             <%else%>
               <div class='sign_up_field'>
                 <%= link_to "ログイン", user_session_path, class: :header_btn %>
