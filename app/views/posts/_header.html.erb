@@ -1,71 +1,16 @@
-
 <header id="luxbar" class="luxbar-fixed">
     <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
-    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-brown">
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-material-cyan">
         <ul class="luxbar-navigation">
             <li class="luxbar-header">
-                <a href="/posts" class="luxbar-brand">
-                  <%= image_tag ("neko_logo.png"), class: :header_logo_image%>
-                </a>
+                <a href="#" class="luxbar-brand">LUXBAR</a>
                 <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
                 id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
             </li>
-            <%# <li class="luxbar-item">
-              <div class='search-field'>
-                <%= form_tag search_posts_path,:method => 'get' do %>
-                  <%# <%= text_field_tag :search,'', placeholder: "住所で検索" %>
-                    <%# <%= submit_tag 'Search', :name => nil , class: "search-field__submit"%> 
-                      <%# <%= fa_icon "search" %>
-                <%# <% end %>
-              <%# </div> %>
-            <%# </li> %> 
-            <% if user_signed_in? %>
-              <li class="luxbar-item ">
-                <div class='my_page_btn_field '>
-                  <%= image_tag current_user.avatar.to_s %>
-                </div>
-              </li>
-              <li class="sp-menu"><a href="/users/<%= current_user.id%>">マイページ</a>
-              </li>
-              <li class="sp-menu"><a href="/users/edit">アカウント設定</a>
-              </li>
-              <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
-              </li>
-            <%else%>
-                <div class='sign_up_field'>
-                  <%= link_to "ログイン", user_session_path, class: :header_btn %>
-                </div>
-                <div class='sign_in_field'>
-                  <%= link_to "新規登録", new_user_registration_path, class: :header_btn %> 
-                </div>
-            <%end%>
+            <li class="luxbar-item"><a href="#">Item 1</a></li>
+            <li class="luxbar-item"><a href="#">Item 2</a></li>
+            <li class="luxbar-item"><a href="#">Item 3</a></li>
+            <li class="luxbar-item"><a href="#">Item 4</a></li>
         </ul>
-        
     </div>
-    <% if user_signed_in? %>
-      <div class='my_window'>
-        <ul>
-          <li class='my_window_name'><%= current_user.nickname%></li>
-          
-          <li class='my_page_btn'>
-            <a href="/users/<%= current_user.id%>">
-              <%= fa_icon "user" %>
-                マイページ
-            </a>
-          </li>
-          <li class='my_page_btn'>
-            <a href="/users/edit">
-              <%= fa_icon "cog" %>
-                アカウント設定
-            </a>
-          </li>
-          <li class='logout_btn'>
-            <a class="btn" rel="nofollow" data-method="delete" href="/users/sign_out">
-              <%= fa_icon "sign-out" %>
-                ログアウト
-            </a>
-          </li>
-        </ul>
-      </div>
-    <%end%>
 </header>
