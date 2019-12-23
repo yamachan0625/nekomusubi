@@ -8,10 +8,14 @@
 // }
 
 .luxbar-menu{
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.9);
 }
 
 .luxbar-header{
+  background-color: #99847B;
+}
+
+.luxbar-navigation{
   background-color: #99847B;
 }
 
@@ -210,6 +214,14 @@
   // .header_btn{
   
   // }
+  // .search-field{
+  //   background-color: rgba(0,0,0,0.9);
+  // }
+
+  .luxbar-navigation{
+    background-color: transparent;
+}
+
   .sign_up_field{
     text-align: center;
     height: 56px;
