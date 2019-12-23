@@ -19,12 +19,9 @@
             </div>
 
             <% if user_signed_in? %>
-              <li class="luxbar-item"><a href="#">Item 1</a></li>
-              <li class="luxbar-item"><a href="#">Item 2</a></li>
-              <li class="luxbar-item"><a href="#">Item 3</a></li>
-              <li class="luxbar-item"><a href="#">Item 4</a></li>
-              <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
-            </li>
+              <li class="sp-menu"><a href="/users/<%= current_user.id%>">マイページ</a></li>
+              <li class="sp-menu"><a href="/users/edit">アカウント設定</a></li>
+              <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
             <%else%>
               <div class='sign_up_field'>
                 <%= link_to "ログイン", user_session_path, class: :header_btn %>
