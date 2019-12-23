@@ -1,14 +1,5 @@
-// .luxbar-navigation{
-//   height: 60px;
-//   width: 100%;
-//   background-color: #99847B;
-//   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-//   z-index: 1;
-//   justify-content: flex-start;
-// }
-
 .luxbar-menu{
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(124,84,77,0.9);
 }
 
 .luxbar-header{
@@ -20,33 +11,10 @@
 }
 
 
-// .luxbar{
-//   height: 60px;
-// }
-
-// .luxbar-item {
-//   height: 60px;
-//   text-align: center;
-//   margin: 0 10px;
-// }
-
-// .header{
-//   display: none;
-// }
-
-// .logo_field{
-//   margin:10px 0px 10px 20px;
-//   cursor: pointer;
-//   float: left;
-// }
-
 .header_logo_image{
   height: 40px;
 }
 
-// .luxbar-item a {
-
-// }
 
 .sp-menu{
   display: none;
@@ -62,26 +30,15 @@
   }
 }
 
-// // .sign_btn_field{
-// //   padding-right: 10px;
-// //   float: right;
-// //   display: inline-flex;
-// // }
-
 .search-field{
   height: 58px;
   line-height: 58px;
   text-align: center;
-  // line-height: 40px;
-  // margin: 0 40px;
-  // position: relative;
   &__submit{
     display: none;
   }
   & i{
     font-size: 20px;
-    // position: absolute;
-    // // right: 10px;
     top: 20px;
     cursor: pointer;
   }
@@ -101,26 +58,6 @@
   color: black;
 }
 
-// .header_btn{
-//   line-height: 60px;
-//   text-decoration: none;
-//   padding: 10px 20px;
-//   background-color: white;
-//   border-radius: 5px;
-//   font-weight: bold;
-//   margin: 0 10px;
-//   &:hover{
-//     opacity: 0.8;
-//   }
-// }
-
-// .new_post_btn_field{
-//   a{
-//     color: #7C544D;
-//     border:2px solid #7C544D;
-//     margin-right: 20px;
-//   }
-// }
 
 .sign_up_field{
   height: 58px;
@@ -165,41 +102,6 @@
   }
 }
 
-// .my_window{
-//   background-color: white;
-//   position: absolute;
-//   top: 65px;
-//   right: 5px;
-//   display: none;
-//   & li{
-//     text-align: center;
-//     border: 1px solid	#D19062;
-//     box-shadow: 0px 2px 7px 0px white;
-//     background-color: #DBD4D0; 
-//     & a{
-//       text-decoration: none;
-//       color:#3A1602;
-//       padding: 10px;
-//       display: block;
-//       & i{
-//         color: #3A1602;
-//         float: left;
-//         font-size: 18px;
-//       }
-//       &:hover{
-//         background-color: #AFA097;
-//       }
-//     }
-//   }
-// }
-
-// .my_window_name{
-//   font-size: 16px;
-//   color: black;
-//   font-weight: bold;
-//   height: 40px;
-//   line-height: 40px;
-// }
 
 .dropdown{
   height: 58px;
@@ -211,12 +113,7 @@
 
 
 @media screen and (max-width: 767px) {
-  // .header_btn{
-  
-  // }
-  // .search-field{
-  //   background-color: rgba(0,0,0,0.9);
-  // }
+
 
   .luxbar-navigation{
     background-color: transparent;
