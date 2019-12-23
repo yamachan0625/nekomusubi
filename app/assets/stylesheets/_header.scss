@@ -8,8 +8,13 @@
 // }
 
 .luxbar-menu{
+  background-color: rgba(0,0,0,0.8);
+}
+
+.luxbar-header{
   background-color: #99847B;
 }
+
 
 // .luxbar{
 //   height: 60px;
@@ -41,6 +46,16 @@
 
 .sp-menu{
   display: none;
+}
+
+.pc-menu{
+  background-color: white;
+  border: 1px solid #99847B;
+  color: #7C544D;
+  & a{
+    display: block;
+    text-decoration: none;
+  }
 }
 
 // // .sign_btn_field{
@@ -131,6 +146,7 @@
 
 .my_page_btn_field {
   line-height: 58px;
+  background-color:#99847B ;
   & img{
     height: 50px;
     width: 50px;
@@ -186,6 +202,7 @@
   line-height: 58px;
   width: 150px;
   text-align: center;
+  border-style: none;;
 }
 
 
