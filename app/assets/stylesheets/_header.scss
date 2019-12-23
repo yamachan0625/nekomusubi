@@ -39,9 +39,9 @@
 
 // }
 
-// .sp-menu{
-//   display: none;
-// }
+.sp-menu{
+  display: none;
+}
 
 // // .sign_btn_field{
 // //   padding-right: 10px;
@@ -129,21 +129,21 @@
   }
 }
 
-// .my_page_btn_field {
-//   & img{
-//     height: 50px;
-//     width: 50px;
-//     border-radius: 50%;
-//     border: 1px solid	#D19062;
-//     cursor: pointer;
-//     margin-top: 5px;
-//     box-shadow: 0px 2px 7px 0px white; 
-//     object-fit: cover;
-//     &:hover{
-//       opacity: 0.8;
-//     }
-//   }
-// }
+.my_page_btn_field {
+  line-height: 58px;
+  & img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid	#D19062;
+    cursor: pointer;
+    box-shadow: 0px 2px 7px 0px white; 
+    object-fit: cover;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
 
 // .my_window{
 //   background-color: white;
@@ -181,6 +181,13 @@
 //   line-height: 40px;
 // }
 
+.dropdown{
+  height: 58px;
+  line-height: 58px;
+  width: 150px;
+  text-align: center;
+}
+
 
 @media screen and (max-width: 767px) {
   // .header_btn{
@@ -213,15 +220,20 @@
     }
   }
   
-  // .my_page_btn_field{
-  //   display: none;
-  // }
+  .my_page_btn_field{
+    display: none;
+  }
+
+  .pc-menu{
+    display: none;
+  }
 
   .sp-menu{
     height: 56px;
     line-height: 56px;
     text-align: center;
     font-weight: bold;
+    display: block;
     a{
       padding: 18px 24px 18px 24px;
       color: white;

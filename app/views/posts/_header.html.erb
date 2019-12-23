@@ -22,6 +22,18 @@
               <li class="sp-menu"><a href="/users/<%= current_user.id%>">マイページ</a></li>
               <li class="sp-menu"><a href="/users/edit">アカウント設定</a></li>
               <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+              <li class="pc-menu dropdown">
+              <a href="/users/<%= current_user.id%>">
+                <div class='my_page_btn_field '>
+                  <%= image_tag current_user.avatar.to_s %>
+                </div>
+              </a>
+                <ul>
+                    <li class="pc-menu" ><a href="/users/<%= current_user.id%>">マイページ</a></li>
+                    <li class="pc-menu" ><a href="/users/edit">アカウント設定</a></li>
+                    <li class="pc-menu" ><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+                </ul>
+            </li>
             <%else%>
               <div class='sign_up_field'>
                 <%= link_to "ログイン", user_session_path, class: :header_btn %>
