@@ -59,7 +59,7 @@ $( document ).on('turbolinks:load', function() {
   });
 
 
-  $('.fa-times-circle').click(function(){
+  $('.fa-times-circle, .back-button').click(function(){
     $('.modal').css('display', 'none');
   })
 

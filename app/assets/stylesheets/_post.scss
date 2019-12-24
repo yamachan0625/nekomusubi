@@ -164,6 +164,11 @@
   .post-card{
     width: 31.333%;
   }
+
+  .post-content{
+    width: 400px;
+    max-height: 700px;
+  }
   
 }
 
@@ -408,7 +413,9 @@
 
 
 .post_actions{
+  display: flex;
   margin: 60px auto 0;
+  justify-content: space-between;
   & input{
   background-color:rgba(191,142,100,1);
   border-style:none;
@@ -417,7 +424,7 @@
   transition: .3s;
   border-radius: 5px;
   cursor: pointer;
-  float: right;
+  // float: right;
   height: 40px;
   width: 30%;
     &:hover{
@@ -426,6 +433,23 @@
       color: rgba(191,142,100,1);
       border: 2px solid rgba(191,142,100,1);
     }
+  }
+}
+
+.back-button{
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  width: 100px;
+  background-color: #BFBFBF;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  &:hover{
+    cursor: pointer;
+      background-color: white;
+      color: #BFBFBF;
+      border: 2px solid #BFBFBF;
   }
 }
 

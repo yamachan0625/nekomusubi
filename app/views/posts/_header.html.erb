@@ -19,9 +19,9 @@
             </div>
 
             <% if user_signed_in? %>
-              <li class="sp-menu"><a href="/users/<%= current_user.id%>">マイページ</a></li>
-              <li class="sp-menu"><a href="/users/edit">アカウント設定</a></li>
-              <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
+              <li class="sp-menu"><a href="/users/<%= current_user.id%>"><%= fa_icon "user" %>マイページ</a></li>
+              <li class="sp-menu"><a href="/users/edit"><%= fa_icon "cog" %>アカウント設定</a></li>
+              <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out"><%= fa_icon "sign-out" %>ログアウト</a></li>
               <li class="pc-menu dropdown">
               <a href="/users/<%= current_user.id%>">
                 <div class='my_page_btn_field '>
