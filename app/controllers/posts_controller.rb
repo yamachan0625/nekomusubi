@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :destroy]
+  before_action :new_post, only: [:index, :search]
 
   def index
     @posts = Post.all.order("created_at DESC").page(params[:page]).per(12)
     @posts2 = Post.all
-    @post = Post.new
     gon.post = @post
     @hash = Gmaps4rails.build_markers(@posts2) do |post, marker|
       marker.lat post.latitude
@@ -66,7 +66,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:search]).page(params[:page]).per(12)
+    @posts = Post.search(params[:search]).order("created_at DESC").page(params[:page]).per(12)
     @result = params[:search]
     @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
       marker.lat post.latitude
@@ -84,6 +84,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def new_post
+    @post = Post.new
   end
 
 end
