@@ -169,6 +169,10 @@
     width: 400px;
     max-height: 700px;
   }
+
+  #get-my-place-btn{
+    bottom: 10px;
+  }
   
 }
 
@@ -246,7 +250,13 @@
   #get-my-place-btn{
     bottom: -80px;
   }
+
+  .fa-times-circle{
+    display: none;
+  }
 }
+
+
 
 .open-googlemap-btn{
   text-align: center;
@@ -283,7 +293,7 @@
   top: 0;
   right: 0;
   // margin-left: 430px;
-  margin-top: 60px;
+  margin-top: 58px;
 }
 
 .fa-times-circle{
