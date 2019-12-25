@@ -5,7 +5,7 @@
   <div class='left-content'>
     <div class='left-content__map'>
       <div class='post_btn'>
-        <p>猫を登録</p>
+        <p>登録</p>
       </div>
       <div class='map_name'>
         <p>捨て猫map</p>
@@ -38,7 +38,7 @@
 
   <%= fa_icon "times-circle" %>
 
-  <div class='post-content__post'>
+  <div class='post-content'>
 
     <%= form_for @post do |f| %>
 
@@ -84,6 +84,9 @@
         </div>
       
         <div class="post_actions">
+          <div class="back-button">
+            戻る
+          </div>
           <%= f.submit "登録する", id: 'new-post-btn'%>
         </div>
     <% end %>
