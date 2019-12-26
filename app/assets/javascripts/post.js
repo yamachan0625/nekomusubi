@@ -67,5 +67,8 @@ $( document ).on('turbolinks:load', function() {
     $('.modal').css('display', 'block');
   })
 
+  $('.post-detail-edit-btn').click(function(){
+    $('.modal').css('display', 'block');
+  })
 
 })
