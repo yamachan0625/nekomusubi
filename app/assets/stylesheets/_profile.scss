@@ -165,22 +165,49 @@ color: white;
 
 
 .edit_btn{
-  height: 30px;
+  height: 40px;
   width: 60px;
   display: block;
   border-radius: 5px;
   background-color: rgba(0,153,255,1);
   color: white;
   font-weight: bold;
-  float: right;
   &:hover{
     cursor: pointer;
     background-color: rgba(0,153,255,0.8);
   }
 }
 
+.profile-back-button{
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  width: 60px;
+  background-color: #BFBFBF;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 
 .edit_name{
   float: left;
   color: white;
+}
+
+.edit_actions{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+@media screen and (max-width: 559px) {
+
+  .edit_modal{
+    width: 360px;
+    max-height: 480px;
+    overflow: scroll;
+  }
 }
