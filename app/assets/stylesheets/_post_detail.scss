@@ -124,6 +124,7 @@
 
 .post-detail-delete-btn{
   text-align: center;
+  padding-bottom: 30px;
   & a{
     color:gray;
     background-color: white;
@@ -136,4 +137,29 @@
       color: white;
     }
   }
+}
+
+@media screen and (max-width: 559px) {
+
+  .contributor{
+    width: 100%;
+  }
+
+  .post-detail-wrapper{
+    padding-top: 30px;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .post-detail-image img{
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .post-detail{
+    width: 100%;
+  }
+  
 }
