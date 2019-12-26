@@ -16,7 +16,6 @@ $( document ).on('turbolinks:load', function() {
 
     readURL(this);
   });
-});
 
   $('.fa-camera').hover(
     function(){
@@ -30,3 +29,11 @@ $( document ).on('turbolinks:load', function() {
       });
     }
   );
+
+  $('.profile-back-button').click(function(){
+    $('#edit_modal_wrapper').css("display", "none");
+  })
+
+});
+
+  
