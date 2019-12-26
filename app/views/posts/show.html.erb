@@ -12,7 +12,7 @@
     </div>
   </div>
 
-
+  <%= render partial: 'edit', locals: { post: @post } %>
 
   <div class='main-content'>
     <div class='main-content__field'>
@@ -81,6 +81,9 @@
           <% end %>
         <% end %>
       <%else%>
+        <div class='post-detail-edit-btn'>
+          編集する
+        </div>
         <div class='post-detail-delete-btn'>
           <%= link_to '削除する', post_path(@post.id), method: :delete, data: { confirm: '本当に削除しますか？' }%>
         </div>
