@@ -64,35 +64,7 @@
     }
   
   }
-  // &__address{
-
-  //   &__left{
-  //     font-weight: bold;
-  //     padding: 10px;
-  //     background-color: #7C544D;
-  //     color: white;
-  //   }
-  //   &__right{
-  //     padding: 10px;
-  //     height: 60px;
-  //     overflow: scroll;
-  //   }
-  // }
-  // &__content{
-    
-  //   &__left{
-  //     padding: 10px;
-  //     font-weight: bold;
-  //     background-color: #7C544D;
-  //     color: white;
-  //   }
-  //   &__right{
-  //     padding: 10px;
-  //     text-align: left;
-  //     overflow: scroll;
-  //     height: 150px;
-  //   }
-  // }
+  
 }
 
 .post-detail-googlemap-btn{
@@ -124,8 +96,22 @@
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(247,111,114,.2);
   }
+}
 
-  
+.post-detail-edit-btn{
+  color: #7C544D;;
+  background-color: white;
+  border: 2px solid #7C544D;
+  border-radius: 5px;
+  padding: 10px 30px;
+  width: 140px;
+  text-align: center;
+  margin: 0 auto 40px;
+  cursor: pointer;
+  &:hover{
+    background-color:#7C544D;
+    color: white;
+  }
 }
 
 .fa-envelope{

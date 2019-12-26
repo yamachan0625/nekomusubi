@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:show, :destroy]
+  before_action :authenticate_user!, only: [:show, :edit, :create, :update, :destroy]
+  before_action :set_post, only: [:show, :destroy, :edit, :update]
   before_action :new_post, only: [:index, :search]
 
   def index
@@ -74,6 +75,17 @@ class PostsController < ApplicationController
       marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
 
       marker.json({ id: post.id, })
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update!(post_params)
+      redirect_to post_path(@post.id)
+    else
+      render :edit
     end
   end
 

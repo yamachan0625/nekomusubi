@@ -4,7 +4,7 @@ $( document ).on('turbolinks:load', function() {
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        $('#img_prev').attr('src', e.target.result);
+        $('#img_prev, #edit_img_prev').attr('src', e.target.result);
       }
       reader.readAsDataURL(input.files[0]);
     }
@@ -12,7 +12,7 @@ $( document ).on('turbolinks:load', function() {
 
   $("#post_image").change(function(){
     $('#img_prev').css('display','block');
-    $('.fa-image, .upload_name').css('display','none');
+    $('.upload_name').css('display','none');
     readURL(this);
   });
 });
