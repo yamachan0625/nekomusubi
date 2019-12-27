@@ -14,4 +14,8 @@ class Post < ApplicationRecord
     Post.where(['address LIKE ?', "%#{search}%"])
   end
 
+  def dangerous
+    Time.current > created_at + 1.week
+  end
+
 end

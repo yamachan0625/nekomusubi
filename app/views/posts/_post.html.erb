@@ -1,15 +1,30 @@
-<li class='post-card'>
-  <div class='post-card__avatar'>
-    <%= link_to user_path(post.user.id) do %>
-      <%= image_tag post.user.avatar.to_s %>
-    <%end%>
-  </div>
-  <div class='post-card__image'>
-    <%= image_tag post.image.to_s%>
-  </div>
-  <div class='post-card__title'>
-    <%= post.title%>
-  </div>
+<%if post.dangerous %>
+  <li class='post-card', style="background-color: #FF4B00;">
+    <div class='post-card__avatar'>
+      <%= link_to user_path(post.user.id) do %>
+        <%= image_tag post.user.avatar.to_s %>
+      <%end%>
+    </div>
+    <div class='post-card__image', style="animation: furu 2.2s infinite;">
+      <%= image_tag post.image.to_s%>
+    </div>
+    <div class='post-card__title', style="color: white;">
+      <%= post.title%>
+    </div>
+<%else%>
+  <li class='post-card'>
+    <div class='post-card__avatar'>
+      <%= link_to user_path(post.user.id) do %>
+        <%= image_tag post.user.avatar.to_s %>
+      <%end%>
+    </div>
+    <div class='post-card__image'>
+      <%= image_tag post.image.to_s%>
+    </div>
+    <div class='post-card__title'>
+      <%= post.title%>
+    </div>
+<%end%>
   <div class='open-googlemap-btn'>
     <%= link_to "Googleマップで見つける", "https://maps.google.co.jp/maps?q=loc:#{post.latitude},#{post.longitude}",target: "_blank" %>
   </div>
