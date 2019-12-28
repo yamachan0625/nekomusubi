@@ -31,4 +31,7 @@
   <div class='post-card__btn'>
     <%= link_to "詳細", post_path(post.id)%>
   </div>
+  <div class='post-card__time'>
+    <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")%>
+  </div>
 </li>

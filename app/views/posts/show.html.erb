@@ -29,6 +29,9 @@
           <%= @post.user.address%>
         </div>
       </div>
+      <div class='created-time'>
+        <%=@post.created_at.strftime("%Y-%m-%d %H:%M:%S")%>
+      </div>
       <div class='post-detail-wrapper'>
         <div class='post-detail-image'>
           <%=image_tag @post.image.to_s%>
