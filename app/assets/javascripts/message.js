@@ -80,13 +80,17 @@ $( document ).on('turbolinks:load', function() {
         var message_id2 = $('.message-box__message2').last().data("message-id");
         var current_user_id = gon.current_user_id;
         
-        
 
-        if( message_id > message_id2){
+        if( message_id > message_id2 ){
           var last_message_id = message_id
-        }else{
+        }else if( message_id2 > message_id ){
           var last_message_id = message_id2 
-        }
+        }else if(message_id == undefined){
+          var last_message_id = message_id2 
+        }else if(message_id2 == undefined){
+          var last_message_id = message_id
+        } 
+        console.log(last_message_id)
         $.ajax({
           url: 'new_message',
           //ルーティングで設定した通りhttpメソッドをgetに指定
@@ -112,7 +116,8 @@ $( document ).on('turbolinks:load', function() {
           $('.message-box').animate({scrollTop: $('.message-box')[0].scrollHeight}, 'fast');
         })
         .fail(function() {
-          alert("自動更新に失敗しました")
+          // alert("自動更新に失敗しました")
+          console.log('error')
         });
       }
     }
