@@ -90,7 +90,6 @@ $( document ).on('turbolinks:load', function() {
         }else if(message_id2 == undefined){
           var last_message_id = message_id
         } 
-        console.log(last_message_id)
         $.ajax({
           url: 'new_message',
           //ルーティングで設定した通りhttpメソッドをgetに指定
