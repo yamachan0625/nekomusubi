@@ -72,7 +72,7 @@ class RoomsController < ApplicationController
       end
       @entry_opponent = User.find(@entry_opponent_id)
     else
-      redirect_back(fallback_location: root_path) #前のページにリダイレクト
+      redirect_to :back(fallback_location: posts_path) #前のページにリダイレクト
     end
   end
 
