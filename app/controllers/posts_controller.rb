@@ -6,8 +6,15 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order("created_at DESC").page(params[:page]).per(12)
+
+    # 一ヶ月以上経過した投稿は削除される
+    @posts.each do |post|
+      if Time.current > post.created_at+ 1.month
+        post.delete
+      end
+    end
+
     @posts2 = Post.all
-    gon.post = @post
     @hash = Gmaps4rails.build_markers(@posts2) do |post, marker|
       marker.lat post.latitude
       marker.lng post.longitude
