@@ -18,4 +18,4 @@
 public/uploads/*
 /.env
 public/assets
-
+config/secrets.yml
