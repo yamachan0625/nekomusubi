@@ -55,7 +55,7 @@ $( document ).on('turbolinks:load', function() {
 
 
   $('#get-my-place-btn').click(function(){
-    $('#get-my-place-btn')
+    $('#get-my-place-btn').text('現在地が表示されるまでお待ちください')
   });
 
 
