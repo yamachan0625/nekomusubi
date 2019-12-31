@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order("created_at asc").page(params[:page]).per(12)
-
+    @new_posts = Post.all.order("created_at desc").limit(5)
     # 一ヶ月以上経過した投稿は削除される
     @posts.each do |post|
       if Time.current > post.created_at+ 1.month
