@@ -24,22 +24,7 @@
         新着ねこ情報
       </h1>
       <ul class='main-content__new-list'>
-        <%@new_posts.each do |post|%>
-          <li class='new-post-card'>
-            <div class='new-post-card__image'>
-              <%= image_tag post.image.to_s%>
-            </div>
-            <div class='new-post-card__title'>
-              <%= post.title%>
-            </div>
-            <div class='new-post-card__btn'>
-              <%= link_to "詳細", post_path(post.id)%>
-            </div>
-            <div class='new-post-card__time'>
-              <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")%>
-            </div>
-          </li>
-        <%end%>
+        <%= render partial: 'posts/new_post',  collection: @new_posts  %>
       </ul>
       <h1>
         <%= fa_icon "paw" %>
