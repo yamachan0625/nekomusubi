@@ -126,3 +126,49 @@
     }
   }
 }
+
+@media screen and (max-width: 559px) {
+
+  .top-visual{
+    height: calc(100vh - 58px);
+    &__inner{
+      display: block;
+      width: auto;
+      &__right{
+        display: none;
+      }
+      &__left{
+        text-align: center;
+        & h1{
+          margin: 100px 0 30px;
+        }
+        & h2{
+          display: inline-block;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .middle-visual__inner{
+    width: auto;
+  }
+
+  .description-box{
+    display: block;
+    padding: 30px 20px;
+    &__left{
+      display: none;
+    }
+  }
+
+  .description-box2{
+    padding: 30px 20px;
+    &__left{
+      margin: auto;
+    }
+    &__right{
+      display: none;
+    }
+  }
+}
