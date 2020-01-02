@@ -1,3 +1,174 @@
-// Place all the styles related to the tops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.top-visual{
+  width: 100%;
+  height: 500px;
+  background-color: #7C544D;
+  margin-top: 58px;
+  &__inner{
+    width: 900px;
+    margin: auto;
+    display: flex;
+    padding-top: 50px;
+    &__left{
+      & h1{
+        color: white;
+        font-size: 38px;
+        font-weight: bold;
+        margin:60px 20px 30px 0;
+        letter-spacing: 3px;
+      }
+      & h2{
+        color: white;
+        font-size: 18px;
+        letter-spacing: 3px;
+        line-height:1.5;
+        margin-bottom: 60px;
+      }
+      &__btn{
+        & a{
+          font-size: 18px;
+          padding: 10px 80px;
+          background-color: white;
+          border-radius: 5px;
+          color: #7C544D;
+          text-decoration: none;
+          letter-spacing: 1px;
+          box-shadow: 0px 2px 7px 0px white; 
+          &:hover{
+            background-color: #bf8e64;
+            color: white;
+          }
+        }
+      }
+    }
+    &__right{
+      & img{
+        width: 600px;
+      }
+    }
+  }
+  
+}
+
+.middle-visual{
+  width: 100%;
+
+  background-color: #F8F4F1;
+  &__inner{
+    width: 900px;
+    margin: auto;
+    &__btn{
+      text-align: center;
+      padding: 10px 0 50px;
+      & a{
+        font-size: 18px;
+        padding: 10px 80px;
+        background-color: white;
+        border-radius: 5px;
+        color: #7C544D;
+        letter-spacing: 1px;
+        box-shadow: 0px 2px 7px 0px white;
+        border: 2px solid #7C544D;
+      }
+    } 
+  }
+}
+
+.description-box{
+  padding: 80px;
+  display: flex;
+  &__left{
+    margin-right: 60px;
+    & img{
+      height: 500px;
+      box-shadow: 2px 2px 4px gray;
+    }
+  }
+  &__right{
+    & h1{
+      font-weight: bold;
+      font-size: 38px;
+      letter-spacing: 1px;
+      color: #7C544D;
+      line-height: 1.2;
+      margin: 40px 0;
+    }
+    & h2{
+      font-size: 18px;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+  }
+}
+
+.description-box2{
+  display: flex;
+  padding:0 80px 80px 80px;
+  &__left{
+    margin-right: 60px;
+    & h1{
+      font-weight: bold;
+      font-size: 38px;
+      letter-spacing: 1px;
+      color: #7C544D;
+      line-height: 1.5;
+      margin: 40px 0;
+    }
+    & h2{
+      font-size: 18px;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+  }
+  &__right{
+    & img{
+      height: 500px;
+      box-shadow: 2px 2px 4px gray;
+    }
+  }
+}
+
+@media screen and (max-width: 559px) {
+
+  .top-visual{
+    height: calc(100vh - 58px);
+    &__inner{
+      display: block;
+      width: auto;
+      &__right{
+        display: none;
+      }
+      &__left{
+        text-align: center;
+        & h1{
+          margin: 100px 0 30px;
+        }
+        & h2{
+          display: inline-block;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .middle-visual__inner{
+    width: auto;
+  }
+
+  .description-box{
+    display: block;
+    padding: 30px 20px;
+    &__left{
+      display: none;
+    }
+  }
+
+  .description-box2{
+    padding: 30px 20px;
+    &__left{
+      margin: auto;
+    }
+    &__right{
+      display: none;
+    }
+  }
+}

@@ -1,12 +1,40 @@
-
-  <% if user_signed_in? %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
-    <%= link_to "編集", edit_user_registration_path %> 
-    <%= link_to "投稿", posts_path %> 
-    <div class='edit-btnn'> プロフィール編集 </div>
-    <%= render 'devise/registrations/profile_edit' %>
-    <%= link_to 'マイページ', user_path(current_user.id)%>
-  <% else %> 
-    <%= link_to "サインイン", new_user_registration_path %> 
-    <%= link_to "ログイン", user_session_path %>
-  <% end %> 
+<%= render partial: 'posts/header' %>
+<div class='top-visual'>
+  <div class='top-visual__inner'>
+    <div class='top-visual__inner__left'>
+      <h1>猫を救おう。</h1>
+      <h2>不幸な猫を救いたい。<br>その思いから作られたSNS。<br>あなたの力を貸してください。</h2>
+      <div class='top-visual__inner__left__btn'>
+        <%= link_to "今すぐ始める", new_user_registration_path %> 
+      </div>
+    </div>
+    <div class='top-visual__inner__right'>
+      <%= image_tag ("app_image.png")%>
+    </div>
+  </div>
+</div>
+<div class='middle-visual'>
+  <div class='middle-visual__inner'>
+    <div class='description-box'>
+      <div class='description-box__left'>
+        <%= image_tag ("post_image.png")%>
+      </div>
+      <div class='description-box__right'>
+        <h1>困っている猫がいたら、<br>位置情報を取得して<br>登録しよう。</h1>
+        <h2>困っている猫を見つけたら<br>写真、タイトル、詳細の入力、<br>位置情報を取得して登録てください。<br>PC、スマホどちらからでも利用可能です。</h2>
+      </div>
+    </div>
+    <div class='description-box2'>
+      <div class='description-box2__left'>
+        <h1>自分の近くの困っている猫を<br>助けよう。</h1>
+        <h2>マップから近くに困っている猫がいないか探してください。googleマップを使って見つけてください。住所検索から探すことも可能です。</h2>
+      </div>
+      <div class='description-box2__right'>
+        <%= image_tag ("map_image.png")%>
+      </div>
+    </div>
+    <div class='middle-visual__inner__btn'>
+      <%= link_to "今すぐ始める", new_user_registration_path %> 
+    </div>
+  </div>
+</div>
