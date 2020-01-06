@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :title, :content, :address, :image, presence: true
+  validates :title, :content, :address, :image, :latitude, :longitude, presence: true
 
   def self.search(search)
     return Post.all unless search
