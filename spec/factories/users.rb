@@ -9,6 +9,7 @@ FactoryBot.define do
     address               {'東京都'}
     introduction          {'よろしくお願いします'}
     avatar                { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/sample_image.jpg'), 'image/jpeg') }
+
   end
 
 end
