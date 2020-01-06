@@ -68,5 +68,11 @@ describe User do
       expect(user).to be_valid
     end
 
+    it "avatarが空でも登録できる " do
+      user = build(:user, avatar: "")
+      user.valid?
+      expect(user).to be_valid
+    end
+
   end
 end
