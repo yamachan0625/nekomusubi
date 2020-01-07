@@ -46,27 +46,14 @@ describe UsersController do
 
   describe '#update' do
 
-  context 'ログインしている時かつ正常な値の時' do
+    context 'ログインしていない時' do
 
-    before do
-      login user
+      it "new_user_session_pathにリダイレクト" do
+        patch :update, params: {id: user}
+        expect(response).to redirect_to(new_user_session_path)
+      end
+
     end
-
-    it "リクエストされたユーザーを更新できる" do
-    end
-
-  end
-
-  context 'ログインしている時かつ正常な値ではないの時' do
-
-    before do
-      login user
-    end
-
-
-  end
-
-  context 'ログインしていない時' do
 
   end
 

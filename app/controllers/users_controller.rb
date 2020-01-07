@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
 
   def update
-    binding.pry
     if current_user.update(user_params)
       redirect_to user_path(current_user.id), notice: '編集が完了しました'
     else
