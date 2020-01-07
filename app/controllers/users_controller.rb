@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 
 
   def update
+    binding.pry
     if current_user.update(user_params)
       redirect_to user_path(current_user.id), notice: '編集が完了しました'
-      #redirect先指定する posts#index
     else
       redirect_to user_path(current_user.id), alert: '編集に失敗しました'
     end
