@@ -153,63 +153,78 @@ describe PostsController do
 
   # end
 
-  describe '#destroy' do
-    let!(:post) { create(:post, user_id: user.id) }
+  # describe '#destroy' do
+  #   let!(:post) { create(:post, user_id: user.id) }
 
-    context 'ログインしている時' do
+  #   context 'ログインしている時' do
 
-      before do
-        login user
-      end
+  #     before do
+  #       login user
+  #     end
 
-      context '削除に成功した時' do
+  #     context '削除に成功した時' do
 
-        subject {
-            delete :destroy,
-            params: {id: post.id}
-          }
+  #       subject {
+  #           delete :destroy,
+  #           params: {id: post.id}
+  #         }
 
-        it 'postが1減る' do
-          expect{ subject }.to change(Post, :count).by( -1 )
-        end
+  #       it 'postが1減る' do
+  #         expect{ subject }.to change(Post, :count).by( -1 )
+  #       end
 
-        it "user_pathにリダイレクト" do
-          subject
-          expect(response).to redirect_to(user_path(user.id))
-        end
+  #       it "user_pathにリダイレクト" do
+  #         subject
+  #         expect(response).to redirect_to(user_path(user.id))
+  #       end
 
-      end
+  #     end
 
-      context '削除に失敗した時' do
-        let(:another_user) { create(:user) }
-        let(:post) { create(:post, user_id: another_user.id) }
+  #     context '削除に失敗した時' do
+  #       let(:another_user) { create(:user) }
+  #       let(:post) { create(:post, user_id: another_user.id) }
         
-        subject {
-            delete :destroy,
-            params: {id: post.id}
-          }
+  #       subject {
+  #           delete :destroy,
+  #           params: {id: post.id}
+  #         }
 
-        it 'postが減らない' do
-          expect{ subject }.not_to change(Post, :count)
-        end
+  #       it 'postが減らない' do
+  #         expect{ subject }.not_to change(Post, :count)
+  #       end
 
-        it "user_pathにリダイレクト" do
-          subject
-          expect(response).to redirect_to(post_path(post.id))
-        end
+  #       it "user_pathにリダイレクト" do
+  #         subject
+  #         expect(response).to redirect_to(post_path(post.id))
+  #       end
 
         
-      end
+  #     end
 
+  #   end
+
+  #   context 'ログインしていない時' do
+
+  #     it "new_user_session_pathにリダイレクト" do
+  #       delete :destroy, params: {id: post.id}
+  #       expect(response).to redirect_to(new_user_session_path)
+  #     end
+
+  #   end
+
+  # end
+
+  describe '#search' do
+    let!(:posts) { create_list(:post, 3, address: "新宿") }
+      
+    it "showテンプレートをレンダリング" do
+      get :search, params: {search: "新宿"}
+      expect(response).to render_template :search
     end
 
-    context 'ログインしていない時' do
-
-      it "new_user_session_pathにリダイレクト" do
-        delete :destroy, params: {id: post.id}
-        expect(response).to redirect_to(new_user_session_path)
-      end
-
+    it "@postsを割り当てる" do
+      get :search, params: {search: "新宿"}
+      expect(assigns(:posts)).to match(posts)
     end
 
   end
