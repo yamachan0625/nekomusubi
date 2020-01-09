@@ -21,7 +21,7 @@ describe UsersController do
         expect(assigns(:user)).to eq user
       end
 
-      it "降順で並べ替えられた投稿の配列を作成" do
+      it "created_at DESCで並べ替えられた投稿の配列を作成" do
         get :show, params: {id: user}
         expect(assigns(:posts)).to match(posts.sort{ |a, b| b.created_at <=> a.created_at } )
       end
