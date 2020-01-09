@@ -93,64 +93,64 @@ describe PostsController do
 
   end
 
-  # describe '#create' do
-  # let(:params) { { user_id: user.id, post: attributes_for(:post)} }
+  describe '#create' do
+  let(:params) { { user_id: user.id, post: attributes_for(:post)} }
 
-  #   context 'ログインしている時' do
+    context 'ログインしている時' do
 
-  #     before do
-  #       login user
-  #     end
+      before do
+        login user
+      end
 
-  #       context '保存に成功した時' do
+        context '保存に成功した時' do
 
-  #         subject {
-  #           post :create,
-  #           params: params
-  #         }
+          subject {
+            post :create,
+            params: params
+          }
 
-  #         it 'postが増える' do
-  #           expect{ subject }.to change(Post, :count).by(1)
-  #         end
+          it 'postが増える' do
+            expect{ subject }.to change(Post, :count).by(1)
+          end
 
-  #         it 'posts_pathにリダレクト' do
-  #           subject
-  #           expect(response).to redirect_to(posts_path)
-  #         end
+          it 'posts_pathにリダレクト' do
+            subject
+            expect(response).to redirect_to(posts_path)
+          end
 
-  #       end
+        end
     
-  #       context '保存に失敗した時' do
-  #         let(:invalid_params) { { user_id: user.id, post: attributes_for(:post, title: nil, address: nil)} }
+        context '保存に失敗した時' do
+          let(:invalid_params) { { user_id: user.id, post: attributes_for(:post, title: nil, address: nil)} }
 
-  #         subject {
-  #           post :create,
-  #           params: invalid_params
-  #         }
+          subject {
+            post :create,
+            params: invalid_params
+          }
 
-  #         it 'postが増えない' do
-  #           expect{ subject }.not_to change(Post, :count)
-  #         end
+          it 'postが増えない' do
+            expect{ subject }.not_to change(Post, :count)
+          end
 
-  #         it 'posts_pathにリダレクト' do
-  #           subject
-  #           expect(response).to redirect_to(posts_path)
-  #         end
+          it 'posts_pathにリダレクト' do
+            subject
+            expect(response).to redirect_to(posts_path)
+          end
         
-  #       end
+        end
 
 
-  #   end
+    end
 
-  #   context 'ログインしていない時' do
+    context 'ログインしていない時' do
 
-  #     it "new_user_session_pathにリダイレクト" do
-  #       post :create, params: params
-  #       expect(response).to redirect_to(new_user_session_path)
-  #     end
+      it "new_user_session_pathにリダイレクト" do
+        post :create, params: params
+        expect(response).to redirect_to(new_user_session_path)
+      end
       
-  #   end
+    end
 
-  # end
+  end
 
 end
