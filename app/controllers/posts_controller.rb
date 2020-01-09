@@ -89,7 +89,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update!(post_params)
+    if @post.update(post_params)
       redirect_to post_path(@post.id)
     else
       render :edit
