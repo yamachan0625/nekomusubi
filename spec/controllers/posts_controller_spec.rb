@@ -214,18 +214,55 @@ describe PostsController do
 
   # end
 
-  describe '#search' do
-    let!(:posts) { create_list(:post, 3, address: "新宿") }
+  # describe '#search' do
+  #   let!(:posts) { create_list(:post, 3, address: "新宿") }
       
-    it "showテンプレートをレンダリング" do
-      get :search, params: {search: "新宿"}
-      expect(response).to render_template :search
+  #   it "showテンプレートをレンダリング" do
+  #     get :search, params: {search: "新宿"}
+  #     expect(response).to render_template :search
+  #   end
+
+  #   it "@postsを割り当てる" do
+  #     get :search, params: {search: "新宿"}
+  #     expect(assigns(:posts)).to match(posts)
+  #   end
+
+  # end
+
+  describe '#edit' do
+    let!(:post) { create(:post, user_id: user.id) }
+
+    context 'ログインしている時' do
+
+      before do
+        login user
+      end
+
+      it 'ステータスコードが200である' do
+        expect(response).to have_http_status(:ok)
+      end
+
+        it "showテンプレートをレンダリング" do
+          get :edit, params: {id: post.id}
+          expect(response).to render_template :edit
+        end
+
+      it "@postを割り当てる" do
+        get :edit, params: {id: post.id}
+        expect(assigns(:post)).to match(post)
+      end
+
     end
 
-    it "@postsを割り当てる" do
-      get :search, params: {search: "新宿"}
-      expect(assigns(:posts)).to match(posts)
+    context 'ログインしていない時' do
+
+      it "new_user_session_pathにリダイレクト" do
+        delete :destroy, params: {id: post.id}
+        expect(response).to redirect_to(new_user_session_path)
+      end
+
     end
+    
 
   end
 
