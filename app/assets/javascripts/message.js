@@ -112,7 +112,11 @@ $( document ).on('turbolinks:load', function() {
             }
           });
           $('.message-box').append(insertHTML);
+
+          if(messages != ""){
           $('.message-box').animate({scrollTop: $('.message-box')[0].scrollHeight}, 'fast');
+          }
+
         })
         .fail(function() {
           // alert("自動更新に失敗しました")
