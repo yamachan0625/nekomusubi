@@ -69,7 +69,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to user_path(current_user.id)
     else
-      redirect_to :back , alert: '削除できません'
+      redirect_to post_path(@post.id) , alert: '削除できません'
     end
   end
 
@@ -89,7 +89,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update!(post_params)
+    if @post.update(post_params)
       redirect_to post_path(@post.id)
     else
       render :edit

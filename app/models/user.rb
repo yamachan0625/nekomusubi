@@ -17,7 +17,7 @@ class User < ApplicationRecord
         end
 
   validates :nickname, presence: true, length: { maximum: 20 } 
-  validates :password, presence: true, length: { minimum: 8 } 
+  devise :validatable, password_length: 8..128
 
   enum address:{
     "---":nil,

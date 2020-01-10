@@ -1,21 +1,14 @@
 class UsersController < ApplicationController
 
-  def index
-  end
-
   def show
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id).order("created_at DESC").page(params[:page]).per(12)
   end
 
-  def edit
-    
-  end
 
   def update
     if current_user.update(user_params)
       redirect_to user_path(current_user.id), notice: '編集が完了しました'
-      #redirect先指定する posts#index
     else
       redirect_to user_path(current_user.id), alert: '編集に失敗しました'
     end

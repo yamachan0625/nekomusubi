@@ -7,6 +7,7 @@ FactoryBot.define do
     content            {'aaaaaaaaaaaaaaa'}
     latitude           {35.6959}
     longitude          {139.702}
+    created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     user
   end
 
