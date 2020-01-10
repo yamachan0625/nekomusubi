@@ -102,6 +102,12 @@
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(247,111,114,.2);
   }
+  & i{
+    position: absolute;
+  margin: 3px 15px;
+  font-size: 17px;
+  color: #f76f72;
+  }
 }
 
 .post-detail-edit-btn{
@@ -118,14 +124,6 @@
     background-color:#7C544D;
     color: white;
   }
-}
-
-.fa-envelope{
-  position: absolute;
-  margin: 3px 15px;
-  font-size: 17px;
-  color: #f76f72;
-  
 }
 
 .post-detail-delete-btn{

@@ -81,3 +81,29 @@
     opacity: 0.8;
   }
 }
+
+.message-btn{
+  float: right;
+  height: 40px;
+  width: 40px;
+  background-color:#7C544D;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  &:hover{
+    opacity: 0.8;
+  }
+  & i {
+    color: white;
+    font-size: 22px;
+  }
+  & a{
+    display: block;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+  }
+}

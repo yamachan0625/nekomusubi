@@ -14,6 +14,10 @@
           <div class='my-page-btn-content'>
             <% if @user.id == current_user.id %>
               <div class='profile-edit-btn'> プロフィール編集 </div>
+              <div class='message-btn'> 
+                <%= fa_icon "envelope" %>
+                <%= link_to "", room_path(@room_id)%>
+              </div>
             <%else%>
 
             <%end%>
