@@ -14,12 +14,29 @@
           <div class='my-page-btn-content'>
             <% if @user.id == current_user.id %>
               <div class='profile-edit-btn'> プロフィール編集 </div>
-              <div class='message-btn'> 
-                <%= fa_icon "envelope" %>
-                <%= link_to "", room_path(@room_id)%>
-              </div>
+              <% unless @room_id == nil %>
+                <div class='message-btn'> 
+                  <%= fa_icon "envelope" %>
+                  <%= link_to "", room_path(@room_id)%>
+                </div>
+              <%end%>
             <%else%>
-
+              <% if @isRoom == true %>
+                <div class='message-btn'> 
+                  <%= fa_icon "envelope" %>
+                  <a href="/rooms/<%= @roomId %>"></a>
+                </div>
+              <% else %>
+                <%= form_for @room do |f| %>
+                  <%= fields_for @entry do |e| %>
+                    <%= e.hidden_field :user_id, value: @user.id %>
+                  <% end %>
+                  <div class='message-btn'> 
+                    <%= fa_icon "envelope" %>
+                    <%= f.submit ""%>
+                  </div>
+                <% end %>
+              <% end %>
             <%end%>
           </div>
           <div class='my-page'>
