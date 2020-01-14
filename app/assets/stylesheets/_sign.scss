@@ -220,20 +220,19 @@
   &:hover{
     opacity: 0.8;
   }
-}
-
-.twitter-btn a{
-  color: white;
-  display: block;
-  padding-right: 20px;
-}
-
-.fa-twitter{
-  float: left;
+  & i{
+    float: left;
   color: white;
   font-size: 20px;
   margin: 10px;
+  }
+  & a{
+    color: white;
+    display: block;
+    padding-right: 20px;
+  }
 }
+
 
 .facebook-btn{
   width: 100%;
@@ -244,19 +243,17 @@
   &:hover{
     opacity: 0.8;
   }
-}
-
-.facebook-btn a{
-  color: white;
-  display: block;
-  padding-right: 20px;
-}
-
-.fa-facebook{
-  float: left;
-  color: white;
-  font-size: 20px;
-  margin: 10px 0px 10px 13px;
+  & i{
+    float: left;
+    color: white;
+    font-size: 20px;
+    margin: 10px 0px 10px 13px;
+  }
+  & a{
+    color: white;
+    display: block;
+    padding-right: 20px;
+  }
 }
 
 .google-btn{
@@ -269,13 +266,11 @@
   &:hover{
     opacity: 0.8;
   }
-}
-
-
-.google-btn a{
-  color: #BBBBBB;
-  display: block;
-  padding-right: 20px;
+  & a{
+    color: #BBBBBB;
+    display: block;
+    padding-right: 20px;
+  }
 }
 
 .google-logo{
