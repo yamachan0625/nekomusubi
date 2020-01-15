@@ -12,7 +12,7 @@ $( document ).on('turbolinks:load', function() {
 
   $("#post_image").change(function(){
     $('#img_prev').css('display','block');
-    $('.upload_name, .fa-image').css('display','none');
+    $('.upload-name, .fa-image').css('display','none');
     readURL(this);
   });
 });

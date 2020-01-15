@@ -7,13 +7,13 @@ $( document ).on('turbolinks:load', function() {
   $('#new_post').submit(function() {
     if($('#post_title').val() == ''){
       $('#post_title').css('border','1px solid red');
-      $('.title_label').css('display','block');
+      $('.title-label').css('display','block');
       return false;
     }
   });
   //文字を入力すると警告が消えて枠色も戻る
   $('#post_title').keyup(function(){
-    $('.title_label').css('display','none');
+    $('.title-label').css('display','none');
     $('#post_title').css('border','1px solid #D19062');
   })
 
@@ -43,13 +43,13 @@ $( document ).on('turbolinks:load', function() {
   $('#new_post').submit(function() {
     if($('#post_content').val() == ''){
       $('#post_content').css('border','1px solid red');
-      $('.detail_label').css('display','block');
+      $('.detail-label').css('display','block');
       return false;
     }
   });
   //文字を入力すると警告が消えて枠色も戻る
   $('#post_content').keyup(function(){
-    $('.detail_label').css('display','none');
+    $('.detail-label').css('display','none');
     $('#post_content').css('border','1px solid #D19062');
   })
 
@@ -63,7 +63,7 @@ $( document ).on('turbolinks:load', function() {
     $('.modal').css('display', 'none');
   })
 
-  $('.post_btn').click(function(){
+  $('.post-btn').click(function(){
     $('.modal').css('display', 'block');
   })
 
