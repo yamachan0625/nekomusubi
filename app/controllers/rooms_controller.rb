@@ -40,7 +40,7 @@ class RoomsController < ApplicationController
       room.entries.each do |room_entry| #そのDMの子要素のentriesを配列で取得しeachで回す
         unless room_entry.user_id == current_user.id #ルームに所属している相手のuser_idを
           dm_member_id << room_entry.user_id        #新しい配列に追加する
-        else  
+        else
         end
       end
     end

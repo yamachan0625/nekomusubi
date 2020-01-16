@@ -26,7 +26,7 @@
               <li class="sp-menu"><a rel="nofollow" data-method="delete" href="/users/sign_out"><%= fa_icon "sign-out" %>ログアウト</a></li>
               <li class="pc-menu dropdown">
               <a href="/users/<%= current_user.id%>">
-                <div class='my_page_btn_field '>
+                <div class='mypage-btn-field '>
                   <%= image_tag current_user.avatar.to_s %>
                 </div>
               </a>
@@ -37,10 +37,10 @@
                 </ul>
             </li>
             <%else%>
-              <div class='sign_up_field'>
+              <div class='sign-up-field'>
                 <%= link_to "ログイン", user_session_path, class: :header_btn %>
               </div>
-              <div class='sign_in_field'>
+              <div class='sign-in-field'>
                 <%= link_to "新規登録", new_user_registration_path, class: :header_btn %> 
               </div>
             <%end%>

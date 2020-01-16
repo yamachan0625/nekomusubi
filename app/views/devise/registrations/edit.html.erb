@@ -11,7 +11,7 @@
     
 
       <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'input_field' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",class: 'input-field' %>
         <span class='new-name', data-placeholder='メールアドレス'> </span>
       </div>
 
@@ -20,17 +20,17 @@
       <% end %>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "new-password",class: 'input_field' %>
+        <%= f.password_field :password, autocomplete: "new-password",class: 'input-field' %>
         <span class='new-name', data-placeholder='パスワード'> </span>
       </div>
 
       <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password",class: 'input_field' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",class: 'input-field' %>
         <span class='new-name', data-placeholder='パスワード(再確認)'> </span>
       </div>
 
       <div class="field">
-        <%= f.password_field :current_password, autocomplete: "current-password",class: 'input_field' %>
+        <%= f.password_field :current_password, autocomplete: "current-password",class: 'input-field' %>
         <span class='new-name', data-placeholder='現在のパスワード'> </span>
       </div>
 
@@ -44,20 +44,3 @@
   </div>
     
   </div>
-
-
-
-  
-
-
-<script>
-  $('.input_field').on("focus",function(){
-    $(this).addClass('focus');
-  });
-  $('.input_field').on("blur",function(){
-    if($(this).val() == "")
-      $(this).removeClass('focus');
-  });
-
-
-</script>

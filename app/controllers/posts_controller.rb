@@ -1,8 +1,22 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, only: [:show, :edit, :create, :update, :destroy]
-  before_action :set_post, only: [:show, :destroy, :edit, :update]
+  before_action :set_post, only: [:destroy, :edit, :update, :show]
   before_action :new_post, only: [:index, :search]
+  before_action :set_marker_index, only: [:index]
+  before_action :set_marker_show, only: [:show]
+  before_action :set_marker_search, only: [:search]
+  before_action :message_user, only: [:show]
+  
+
+  include CreateMessageRoom
+  before_action :set_message, only: [:show]
+
+  include BuildMarkers
+  before_action :set_markers, only: [:index, :show, :search]
+
+
+
 
   def index
     @posts = Post.all.order("created_at asc").page(params[:page]).per(12)
@@ -13,44 +27,9 @@ class PostsController < ApplicationController
         post.delete
       end
     end
-
-    @posts2 = Post.all
-    @hash = Gmaps4rails.build_markers(@posts2) do |post, marker|
-      marker.lat post.latitude
-      marker.lng post.longitude
-      marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
-      marker.json({ id: post.id, })
-    end
   end
 
   def show
-    @hash = Gmaps4rails.build_markers(@post) do |post, marker|
-      marker.lat post.latitude
-      marker.lng post.longitude
-      marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
-
-      marker.json({ id: post.id, })
-    end
-
-    @user = @post.user
-    @currentUserEntry = Entry.where(user_id: current_user.id)
-    @userEntry = Entry.where(user_id: @user.id)
-
-    unless @user.id == current_user.id
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
-          if cu.room_id == u.room_id then
-            @isRoom = true
-            @roomId = cu.room_id
-          end
-        end
-      end
-      if @isRoom
-      else
-        @room = Room.new
-        @entry = Entry.new
-      end
-    end
 
   end
 
@@ -76,13 +55,6 @@ class PostsController < ApplicationController
   def search
     @posts = Post.search(params[:search]).order("created_at DESC").page(params[:page]).per(12)
     @result = params[:search]
-    @hash = Gmaps4rails.build_markers(@posts) do |post, marker|
-      marker.lat post.latitude
-      marker.lng post.longitude
-      marker.infowindow render_to_string(partial: "posts/infowindow", locals: { post: post })
-
-      marker.json({ id: post.id, })
-    end
   end
 
   def edit
@@ -97,16 +69,32 @@ class PostsController < ApplicationController
   end
 
   private
-  def post_params
-    params.require(:post).permit(:title, :address, :image, :content,:latitude, :longitude, :remove_image)
-  end
+    def post_params
+      params.require(:post).permit(:title, :address, :image, :content,:latitude, :longitude, :remove_image)
+    end
 
-  def set_post
-    @post = Post.find(params[:id])
-  end
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
-  def new_post
-    @post = Post.new
-  end
+    def new_post
+      @post = Post.new
+    end
+
+    def message_user
+      @user = @post.user
+    end
+
+    def set_marker_index
+      @map_posts = Post.all
+    end
+
+    def set_marker_show
+      @map_posts = Post.find(params[:id])
+    end
+
+    def set_marker_search
+      @map_posts = Post.search(params[:search])
+    end
 
 end
