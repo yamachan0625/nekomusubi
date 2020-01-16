@@ -15,9 +15,12 @@ class User < ApplicationRecord
             user.password = Devise.friendly_token[0,20]
           end
         end
-
+  
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
   validates :nickname, presence: true, length: { maximum: 20 } 
   devise :validatable, password_length: 8..128
+
 
   enum address:{
     "---":nil,
