@@ -4,6 +4,8 @@
 
 <img width="722" alt="スクリーンショット 2020-01-01 1 26 16" src="https://user-images.githubusercontent.com/55592297/72965617-2d59bf80-3e00-11ea-968c-ad0ac59bd13d.png">
 
+<img width="310" alt="スクリーンショット 2020-01-01 1 37 31" src="https://user-images.githubusercontent.com/55592297/72966148-8118d880-3e01-11ea-8fe6-82210faed2c5.png">
+
 <img width="1440" alt="スクリーンショット 2020-01-23 17 09 00" src="https://user-images.githubusercontent.com/55592297/72966818-27b1a900-3e03-11ea-82c3-f70039b9b936.png">
 
 <img width="1440" alt="スクリーンショット 2020-01-23 17 04 17" src="https://user-images.githubusercontent.com/55592297/72966526-8296d080-3e02-11ea-8339-e4b8c9b0fe6d.png">
@@ -13,8 +15,6 @@
 
 <img width="1440" alt="スクリーンショット 2020-01-23 17 03 16" src="https://user-images.githubusercontent.com/55592297/72966440-567b4f80-3e02-11ea-9aa3-8ad140f9b8ac.png">
 
-
-<img width="310" alt="スクリーンショット 2020-01-01 1 37 31" src="https://user-images.githubusercontent.com/55592297/72966148-8118d880-3e01-11ea-8fe6-82210faed2c5.png">
 
 
 ## リンク
