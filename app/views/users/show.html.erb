@@ -13,7 +13,9 @@
           </div>
           <div class='my-page-btn-content'>
             <% if @user.id == current_user.id %>
-              <div class='profile-edit-btn'> プロフィール編集 </div>
+              <%if @user.email != "test@gmail.com"%>
+                <div class='profile-edit-btn'> プロフィール編集 </div>
+              <%end%>
               <% unless @room_id == nil %>
                 <div class='message-btn'> 
                   <%= fa_icon "envelope" %>
