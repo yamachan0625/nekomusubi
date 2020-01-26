@@ -31,6 +31,9 @@
           <%= f.submit "新規登録", class: 'new-btn' %>
         </div>
       <% end %>
+
+      <%= render "devise/sessions/testuser" %>
+      
       <div class='btn-field'>
         <%- if controller_name != 'sessions' %>
           <li><%= link_to "登録済みの方はこちら", new_session_path(resource_name) %><br /></li>

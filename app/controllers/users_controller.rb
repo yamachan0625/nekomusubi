@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   end
 
-
   def update
     if current_user.update(user_params)
       redirect_to user_path(current_user.id), notice: '編集が完了しました'
@@ -31,4 +30,5 @@ class UsersController < ApplicationController
   def message_user
     @user = User.find(params[:id])
   end
+
 end
