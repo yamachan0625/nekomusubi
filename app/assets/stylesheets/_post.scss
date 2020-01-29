@@ -277,7 +277,7 @@
   }
 
   #get-my-place-btn{
-    bottom: 5px;
+    top: 650px;
   }
 
 }
@@ -333,11 +333,8 @@
 
           .post-content{
             width: 360px;
-            max-height: 480px;
-          }
-
-          #get-my-place-btn{
-            bottom: -200px;
+            height: 100%;
+            position: static;
           }
 
           .fa-times-circle{
@@ -403,7 +400,6 @@
 }
 
 .post-content{
-  // width: 400px;
   padding: 10px 20px;
   position: absolute;
   top: 0;
@@ -411,12 +407,10 @@
   bottom: 0;
   left: 0;
   margin:auto;
-  height: fit-content;
   background-color: white;
   border: 2px solid	#D19062;
   box-shadow: 0 0 8px white;
   border-radius: 5px;
-  // max-height: 600px;
   overflow: scroll;
 }
 
@@ -542,7 +536,6 @@
   transition: .3s;
   border-radius: 5px;
   cursor: pointer;
-  // float: right;
   height: 40px;
   width: 30%;
     &:hover{
