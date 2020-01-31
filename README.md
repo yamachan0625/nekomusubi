@@ -2,11 +2,13 @@
 
 ## 使用画面サンプル
 
+<img width="1440" alt="スクリーンショット 2020-01-27 0 09 47" src="https://user-images.githubusercontent.com/55592297/73137236-5e085600-4099-11ea-8dd6-5acb6d1e1647.png">
+
 <img width="722" alt="スクリーンショット 2020-01-01 1 26 16" src="https://user-images.githubusercontent.com/55592297/72965617-2d59bf80-3e00-11ea-968c-ad0ac59bd13d.png">
 
 <img width="310" alt="スクリーンショット 2020-01-01 1 37 31" src="https://user-images.githubusercontent.com/55592297/72966148-8118d880-3e01-11ea-8fe6-82210faed2c5.png">
 
-<img width="1440" alt="スクリーンショット 2020-01-27 0 09 47" src="https://user-images.githubusercontent.com/55592297/73137236-5e085600-4099-11ea-8dd6-5acb6d1e1647.png">
+
 
 <img width="1440" alt="スクリーンショット 2020-01-27 0 07 03" src="https://user-images.githubusercontent.com/55592297/73137219-31ecd500-4099-11ea-88a5-0d82e021edc4.png">
 
