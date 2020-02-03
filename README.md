@@ -40,7 +40,7 @@ https://nekomikke.com
 ・単体テスト(Rspec)  
 
 ## 追加したい機能
-・統合テスト実装(Rspec) 
+・統合テスト実装(Rspec)   
 ・Dockerを使用して仮想化  
 ・ci/cdパイプラインの構築  
 
