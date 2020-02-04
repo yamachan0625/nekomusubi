@@ -25,8 +25,8 @@ https://nekomikke.com
    
 ## 実装機能
 ・アカウント認証機能（devise）  
-・認証（メールアドレス,twitter,facebook,google） 
-・かんたんログイン機能
+・認証（メールアドレス,twitter,facebook,google）  
+・かんたんログイン機能  
 ・投稿のCURD機能（一覧、新規作成、編集、削除）  
 ・画像のアップロード機能（CarrierWave） 
 ・投稿の詳細表示機能  
